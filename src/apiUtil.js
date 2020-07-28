@@ -1,12 +1,23 @@
-const axios = require("axios");
-const AIRTABLE_ENDPOINT = 'https://api.airtable.com/v0/appJ2zDoqvxeNEdQH/Table%201';
-const BEARER_TOKEN = 'keyVv0yLNmlyIb3ze'; // need to protect
+const API_KEY = 'keyVv0yLNmlyIb3ze'; // need to protect
+const TABLE_NAME = 'projects';
+
+const Airtable = require('airtable');
+const portfolioBase = new Airtable({
+  apiKey: API_KEY}).base('appJ2zDoqvxeNEdQH');
+
 
 export const fetchProjects = () => {
-  return axios( { 
-    method: 'get', 
-    url: AIRTABLE_ENDPOINT, 
-    headers: { 'Authorization': BEARER_TOKEN }  
-  });
+  const projects = [];
+
+  portfolioBase(TABLE_NAME)
+    .select({})
+    .firstPage((err, records) => {
+      if (err) { console.log('err', err); return;}
+      records.forEach((record) => {
+        projects.push(record.fields);
+      })
+  })
+
+  return projects;
 }
 

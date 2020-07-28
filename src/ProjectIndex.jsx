@@ -11,25 +11,18 @@ class ProjectIndex extends React.Component {
   }
 
   componentDidMount() {
-    fetchProjects()
-      .then((data) => this.setState({ data: data}));
+    this.setState({ data: fetchProjects()});
   }
 
   render() {
-    if (this.state.data) {
-      // let { userId, id, title, completed } = this.state.data.data;
-      return (
-        <>
-          <h2>I am a dynamic component!</h2>
-          {/* <h3>User {userId}  |  TodoId: {id}  |  Title: {title}  |  Completed: {completed}</h3> */}
-        </>
-      )
-    } else {
-      return null;
-    }
+    if (!this.state.data) return null;
+    return (
+      <>
+        <h2>I am a dynamic component!</h2>
+        {/* this.state.data.map((record, idx) => <p>{record.title}</p>) */}
+      </>
+    )  
   }
-
 }
-
 
 export default ProjectIndex;
