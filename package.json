@@ -1,0 +1,29 @@
+{
+  "name": "react-react-scripts",
+  "version": "1.0.0",
+  "description": "Lightweight starter boilerplate for a simple react app",
+  "main": "'./src/index.js'",
+  "scripts": {
+    "start": "react-scripts start"
+  },
+  "author": "Sarah Jiang",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
