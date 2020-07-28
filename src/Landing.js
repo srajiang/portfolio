@@ -1,5 +1,5 @@
 import React from 'react';
-import DynamicComponent from './ProjectIndex';
+import ProjectIndex from './ProjectIndex';
 
 const Landing = () => {
 
