@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.js'
+import Landing from './Landing.js'
 
 document.addEventListener('DOMContentLoaded', () => {
 
   const root = document.getElementById('root');
   ReactDOM.render(
-    <App></App>,
+    <Landing></Landing>,
     root
   )
 

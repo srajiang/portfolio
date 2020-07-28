@@ -1,7 +1,7 @@
 import React from 'react';
 import { getData } from './apiUtil';
 
-class DynamicComponent extends React.Component {
+class ProjectIndex extends React.Component {
 
   constructor(props) {
     super(props)
@@ -29,4 +29,4 @@ class DynamicComponent extends React.Component {
     }
   }
 }
-export default DynamicComponent;
+export default ProjectIndex;
