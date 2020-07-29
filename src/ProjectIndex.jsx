@@ -10,18 +10,21 @@ class ProjectIndex extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.setState({ data: fetchProjects()});
+  async componentDidMount() {
+    let projects = await fetchProjects();
+    this.setState({ data: projects });
   }
 
   render() {
     if (!this.state.data) return null;
     return (
       <>
-        <h2>I am a dynamic component!</h2>
-        {/* this.state.data.map((record, idx) => <p>{record.title}</p>) */}
+        <h2>I am a component!</h2>
+        <ul>
+          { this.state.data.map(record => <li key={record.id}>{record.fields.title}</li>) }
+        </ul>
       </>
-    )  
+    );  
   }
 }
 
