@@ -1,4 +1,4 @@
-const API_KEY = 'keyVv0yLNmlyIb3ze'; // need to protect
+
 const TABLE_NAME = 'projects';
 
 const Airtable = require('airtable');
