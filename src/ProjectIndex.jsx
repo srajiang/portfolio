@@ -1,7 +1,7 @@
 import React from 'react';
 import { fetchProjects } from './apiUtil';
 import Project from './Project';
-import { Grid } from './Project.styled';
+import { Grid, Title } from './Project.styled';
 
 class ProjectIndex extends React.Component {
 
@@ -21,11 +21,14 @@ class ProjectIndex extends React.Component {
     let [data] = [this.state.data];
     if (!data) return null;
     return (
-      <Grid>
-          { data.map(
-            record => <Project key={record.id} record={record.fields}/>
-          )}
-      </Grid>
+      <>
+        <Title>Things I've Built</Title>
+        <Grid>
+            { data.map(
+              record => <Project key={record.id} record={record.fields}/>
+            )}
+        </Grid>
+      </>
     );  
   }
 }

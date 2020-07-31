@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import Landing from './Landing.js'
+import Landing from './Landing';
+
+import GlobalStyle from "./globalStyles"; // css reset
 
 document.addEventListener('DOMContentLoaded', () => {
 
   const root = document.getElementById('root');
   ReactDOM.render(
-    <Landing></Landing>,
+    <Fragment>
+      <GlobalStyle />
+      <Landing />
+    </Fragment>,
     root
-  )
+  );
 
 })
