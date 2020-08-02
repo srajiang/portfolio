@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
     vertical-align: baseline;
   }
 
-  /* To handle white overscroll behavior */
+  /* To handle default white overscroll behavior */
   html {
     background-color: ${colors_dark.background_primary};
   }

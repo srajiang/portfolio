@@ -41,6 +41,7 @@ export const Desc = styled.p`
   color: ${colors.text};
   font-weight: ${font.weight.regular};
   font-family: ${font.family.body}, sans-serif;
+  line-height: 1.5;
 `;
 
 export const DescMeta = styled.p`

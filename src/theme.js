@@ -1,3 +1,4 @@
+import { css } from 'styled-components';
 // ---------------------- Colors
 
 export const colors_dark = {
@@ -17,10 +18,12 @@ export const colors_dark = {
 export const colors_light = {
   background_primary: "#EEEFF0",
   background_secondary: "#E3E5EC",
-  text_accent: "#FE4F4F",
-  text_header: "#33436F",
-  text_header_sub: "#33436E"
 
+  text_accent: "#FE4F4F",
+
+  text_header_lg: "#33436F",
+  text_header_lg_sub: "#33436E",
+  text_header_sm:  "#33436F",
 }
 
 // ---------------------- Font
@@ -54,6 +57,33 @@ export const font = {
 
 
 // ---------------------- Media Query Helper
+const breakpoints = {
+  desktop_lg: { px: 1000 },
+  desktop_sm: { px: 900 },
+  tablet: { px: 768 },
+  mobile_lg: { px: 600} 
+}
+
+/* 
+  exports a media helper object
+  with keys for all the media types (desktoplg, dtsml, and tablet)
+  and values are a function which accepts stringged template literals 
+  and return the correct min-width css syntax along with any other rules
+  supplied
+  
+ */
+
+export const media = Object.keys(breakpoints).reduce((acc, mediaType) => {
+  const { px } = breakpoints[mediaType];
+  acc[mediaType] = (...args) => css`
+  
+    @media (min-width: ${px}px) {
+      ${css(...args)};
+    }
+  `;
+  return acc;
+}, {})
+
 const theme = {
   colors_light,
   colors_dark,
