@@ -1,7 +1,6 @@
 import React from 'react';
 import { B as Button, L as Link } from './Base.styled';
 import { NavLink, NavBar } from './Margin.styled';
-import { FontAwesomeIcon as FA } from "@fortawesome/react-fontawesome";
 
 /* 
   TODO: 
@@ -15,9 +14,6 @@ const Header = () => {
   return (
     <NavBar>
       <NavLink>
-        <Link className="anchor">
-          <FA icon="adjust" />
-        </Link>
         <Link className="anchor">
           <span>01 / </span>About
         </Link>

@@ -1,14 +1,10 @@
 import styled from "styled-components";
-import { colors_dark, 
-         colors_light, 
-         font, 
+import { font, 
          transition, 
          boxShadow,
          mediaQuery 
       } from './theme';
 
-// dark is default mode
-const colors = colors_dark;
 
 export const Grid = styled.div`
   display: grid;
@@ -32,7 +28,7 @@ export const Grid = styled.div`
 
 export const Card = styled.div`
   border-radius: 3px;
-  background-color: ${colors.background_secondary};
+  background-color: ${({theme}) => theme.background_secondary};
   padding: 1.65rem;
 
   position: relative;
@@ -52,7 +48,7 @@ export const Title = styled.h2`
   font-size: ${font.size.header_sm};
   font-family: ${font.family.header}, sans-serif;
   font-weight: ${font.weight.bold};
-  color: ${colors.text_header_sm};
+  color: ${({theme}) => theme.text_header_sm};
 `;
 
 export const CardTitle = styled(Title)`
@@ -62,7 +58,7 @@ export const CardTitle = styled(Title)`
 `;
 
 export const Desc = styled.p`
-  color: ${colors.text};
+  color: ${({theme}) => theme.text};
   font-weight: ${font.weight.regular};
   font-family: ${font.family.body}, sans-serif;
   line-height: 1.5;
@@ -81,7 +77,7 @@ export const DescMeta = styled.p`
     margin-right: .75rem;
   }
 
-  color: ${colors.text};
+  color: ${({theme}) => theme.text};
   font-size: ${font.size.accent};
   font-family: ${font.family.accent}, sans-serif;
 `;
@@ -91,9 +87,10 @@ export const Link = styled.div`
   text-align: right;
   padding-bottom: 5%;
   font-size: calc(${font.size.header_sm} * 1);
-  color: ${colors.text};
+  color: ${({theme}) => theme.text};
 
   & > .i {
     margin-left: 1rem;
   }
 `;
+

@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { colors_dark, colors_light } from './theme';
-
 
 export const Main = styled.main`
   width: 70vw;
@@ -9,5 +7,5 @@ export const Main = styled.main`
 
 export const Body = styled.div`
   height: 100vh;
-  background-color: ${colors_dark.background_primary};
+  background-color: ${({theme}) => theme.background_primary};
 `;

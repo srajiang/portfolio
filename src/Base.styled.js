@@ -1,19 +1,18 @@
 import styled from "styled-components";
 import {
-  colors_dark,
   font,
   transition,
 } from "./theme";
 
 // default link with hover
 export const L = styled.a`
-  color: ${colors_dark.text};
+  color: ${({theme}) => theme.text};
   font-family: ${font.family.accent};
 
   &:hover {
     cursor: pointer;
     transition: ${transition.cubic};
-    color: ${colors_dark.text_accent};
+    color: ${({theme}) => theme.text_accent};
   }
 
   &:visited {
@@ -28,8 +27,8 @@ export const B = styled.a`
     text-decoration: none;
   }
 
-  border: 1px solid ${colors_dark.text_accent};
-  color: ${colors_dark.text_accent};
+  border: 1px solid ${({theme}) => theme.text_accent};
+  color: ${({theme}) => theme.text_accent};
   background-color: transparent;
   font-family: ${font.family.accent};
 
@@ -42,7 +41,7 @@ export const B = styled.a`
   &:hover {
     transition: ${transition.cubic};
     cursor: pointer;
-    background-color: ${colors_dark.text_accent};
+    background-color: ${({theme}) => theme.text_accent};
     background: rgba(255, 115, 123, .2);
   }
 `;

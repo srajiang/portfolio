@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { L } from './Base.styled';
 
 import { 
-  colors_light,
-  colors_dark,
   mediaQuery,
 } from './theme';
 
@@ -31,7 +29,7 @@ export const VertLink = styled.div`
     height: 100px;
     margin: 0 auto;
     display: block;
-    background-color: ${colors_dark.text};
+    background-color: ${ ({ theme }) => theme.text};
   }
 
 `;
@@ -45,5 +43,3 @@ export const VertL = styled(L)`
     transform: translateY(-10%);
   }
 `;
-
-

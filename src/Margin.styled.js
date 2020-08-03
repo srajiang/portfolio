@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-import { colors_dark, transition, font } from "./theme";
-
+import { font } from "./theme";
 
 const Bar = styled.div`
   width: 100vw;
@@ -9,7 +8,7 @@ const Bar = styled.div`
   display: flex;
     align-items: center;
 
-  color: ${colors_dark.text};
+  color: ${({theme}) => theme.text};
   font-family: ${font.family.accent};
   font-size: ${font.size.accent};
 `;
@@ -38,7 +37,7 @@ export const NavLink = styled.div`
   }
 
   .anchor > span {
-    color: ${colors_dark.text_accent};
+    color: ${({theme}) => theme.text_accent};
   }
 `;
 

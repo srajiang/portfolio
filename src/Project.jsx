@@ -14,8 +14,6 @@ const Project = fields => {
     stack,
    } = fields.record;
   
-   console.log(fields);
-  
    return (
      <>
        <Card>

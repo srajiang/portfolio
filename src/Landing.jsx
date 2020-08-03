@@ -1,9 +1,16 @@
 import React from 'react';
 import ProjectIndex from './ProjectIndex';
 import { Body, Main } from './Landing.styled';
-import { ExternalLink as VertLink } from './ExternalLink';
+import { VerticalNav } from './VerticalNav';
 import Header from './Header'; 
 import Footer from './Footer';
+
+/* dark light mode */
+import { ThemeProvider } from 'styled-components';
+import { useDarkMode } from './useDarkMode';
+import { colors_dark, colors_light } from './theme';
+import GlobalStyle from "./globalStyles"; // css reset
+import ModeToggle from './ModeToggle';
 
 /* icon import  */
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -25,18 +32,28 @@ export const externalLinks = {
 
 const Landing = () => {
 
+  const [ theme, toggleTheme ] = useDarkMode();
+  const currTheme = theme === 'light' ? colors_light : colors_dark ;
+  console.log(currTheme);
+
   return (
-    <Body>
-      <VertLink externalLinks={externalLinks} />
-      <Header />
-      <Main>
-        {/* + intro section */}
-        {/* + about me section */}
-        {/* + featured project section */}
-        <ProjectIndex />
-      </Main>
-      <Footer />
-    </Body>
+    <ThemeProvider theme={currTheme}>
+     
+        <GlobalStyle />
+        <Body>
+          <ModeToggle toggleTheme={toggleTheme} />   
+          <VerticalNav externalLinks={externalLinks} />
+          <Header />
+          <Main>
+            {/* + intro section */}
+            {/* + about me section */}
+            {/* + featured project section */}
+            <ProjectIndex />
+          </Main>
+          <Footer />
+        </Body>
+      
+    </ThemeProvider>
   );  
 }
 

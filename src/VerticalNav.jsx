@@ -1,14 +1,15 @@
 import React from 'react';
 import { FontAwesomeIcon as FA } from "@fortawesome/react-fontawesome";
 
-import { VertLink, VertL } from './ExternalLink.styled';
+import { VertLink, VertL } from './VerticalNav.styled';
 
 /* 
 
-TODO: light dark mode, fade in transition on page-load
+TODO: 
+fade in transition on page-load
 
 */
-export const ExternalLink = ({externalLinks}) => {
+export const VerticalNav = ({externalLinks}) => {
 
   let links = Object.values(externalLinks);
 

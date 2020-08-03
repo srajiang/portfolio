@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { colors_dark, colors_light } from './theme';
 
 /* 
   Credit: http://meyerweb.com/eric/tools/css/reset/ 
@@ -33,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
 
   /* To handle default white overscroll behavior */
   html {
-    background-color: ${colors_dark.background_primary};
+    background-color: ${({theme}) => theme.background_primary};
   }
 
   /* HTML5 display-role reset for older browsers */

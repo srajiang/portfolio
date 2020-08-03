@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <FooterBar>
       <p>
-        Built by Sarah Jiang.
+        Built by Sarah Jiang
       </p>
       <p>
         Design + Inspiration <L href="https://brittanychiang.com/">here</L>.
