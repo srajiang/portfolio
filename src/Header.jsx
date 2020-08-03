@@ -1,7 +1,15 @@
 import React from 'react';
 import { B as Button, L as Link } from './Base.styled';
-import { NavLink, NavBar } from './Header.styled';
+import { NavLink, NavBar } from './Margin.styled';
 import { FontAwesomeIcon as FA } from "@fortawesome/react-fontawesome";
+
+/* 
+  TODO: 
+  Add Nav href anchors + resume links
+  Add responsive styling 
+  Add logo? 
+  Add scroll box-shadow animation
+*/
 
 const Header = () => {
   return (

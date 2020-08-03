@@ -3,6 +3,7 @@ import ProjectIndex from './ProjectIndex';
 import { Body, Main } from './Landing.styled';
 import { ExternalLink as VertLink } from './ExternalLink';
 import Header from './Header'; 
+import Footer from './Footer';
 
 /* icon import  */
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -33,8 +34,8 @@ const Landing = () => {
         {/* + about me section */}
         {/* + featured project section */}
         <ProjectIndex />
-        {/* + footer */}
       </Main>
+      <Footer />
     </Body>
   );  
 }
