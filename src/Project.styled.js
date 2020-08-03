@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors_dark, colors_light, font } from './theme';
+import { colors_dark, colors_light, font, transition } from './theme';
 
 // dark is default mode
 const colors = colors_dark;
@@ -63,5 +63,20 @@ export const DescMeta = styled.p`
   font-family: ${font.family.accent}, sans-serif;
 `;
 
-export const Link = styled.a`
+export const Link = styled.div`
+
+  text-align: right;
+
+  font-size: ${font.size.header_sm};
+  color: ${colors.text};
+
+  & > .i {
+    margin-left: 1rem;
+  }
+
+  & > .i:hover {
+    cursor: pointer;
+    transition: ${transition.cubic};
+    color: ${colors.text_accent};
+  }
 `;

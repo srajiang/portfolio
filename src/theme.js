@@ -53,6 +53,11 @@ export const font = {
   family: fontFamily,
   size: fontSizes
 }
+// ---------------------- Transition
+export const transition = {
+  cubic: "all .25s cubic-bezier(0.645, 0.045, 0.355, 1)",
+};
+
 // ---------------------- Box Shadows
 
 
@@ -65,15 +70,15 @@ const breakpoints = {
 }
 
 /* 
-  exports a media helper object
+  exports a media query helper object
   with keys for all the media types (desktoplg, dtsml, and tablet)
   and values are a function which accepts stringged template literals 
   and return the correct min-width css syntax along with any other rules
   supplied
-  
+
  */
 
-export const media = Object.keys(breakpoints).reduce((acc, mediaType) => {
+export const mediaQuery = Object.keys(breakpoints).reduce((acc, mediaType) => {
   const { px } = breakpoints[mediaType];
   acc[mediaType] = (...args) => css`
   
@@ -87,7 +92,8 @@ export const media = Object.keys(breakpoints).reduce((acc, mediaType) => {
 const theme = {
   colors_light,
   colors_dark,
-  font
+  font, 
+  transition
 }
 
 export default theme;
