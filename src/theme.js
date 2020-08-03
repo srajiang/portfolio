@@ -2,8 +2,8 @@ import { css } from 'styled-components';
 // ---------------------- Colors
 
 export const colors_dark = {
-  background_primary: "#0D303B",
-  background_secondary: "#2D5658",
+  background_primary: "#042934",
+  background_secondary: "#18484be3",
   background_shadow: "#021B1A",
   
   text_accent: "#FF737B", // contrast
@@ -19,6 +19,7 @@ export const colors_dark = {
 export const colors_light = {
   background_primary: "#EEEFF0",
   background_secondary: "#E3E5EC",
+  background_shadow: "",
 
   text_accent: "#FE4F4F",
 

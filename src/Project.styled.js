@@ -10,13 +10,12 @@ import { colors_dark,
 // dark is default mode
 const colors = colors_dark;
 
-// TODO: responsive logic needed
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;   
   grid-template-rows: 300px 300px 300px;  
-  column-gap: 12px;
-  row-gap: 12px;
+  column-gap: 15px;
+  row-gap: 15px;
 
   ${mediaQuery.desktop_lg`
     grid-template-columns: 1fr 1fr;  
@@ -26,21 +25,25 @@ export const Grid = styled.div`
   ${mediaQuery.desktop_sm`
     grid-template-columns: 1fr;     
     grid-template-rows: 350px 350px 350px;    
+    min-width: 300px;
   `}
-
-
 
 `;
 
 export const Card = styled.div`
   border-radius: 3px;
   background-color: ${colors.background_secondary};
-  padding: 1.5rem;
+  padding: 1.65rem;
 
   position: relative;
   box-shadow: ${boxShadow.medium};
 
-  min-width: 300px;
+  transition: all 250ms ease-out;
+
+  &:hover {
+    transform: translateY(-1.5%);
+  }
+
 `;
 
 export const Title = styled.h2`
@@ -75,8 +78,7 @@ export const DescMeta = styled.p`
 
   .tag { 
     margin-top: .5rem;
-    margin-left: .5rem;
-    margin-right: .5rem;
+    margin-right: .75rem;
   }
 
   color: ${colors.text};
@@ -88,7 +90,7 @@ export const Link = styled.div`
 
   text-align: right;
   padding-bottom: 5%;
-  font-size: ${font.size.header_sm};
+  font-size: calc(${font.size.header_sm} * 1);
   color: ${colors.text};
 
   & > .i {
@@ -99,5 +101,12 @@ export const Link = styled.div`
     cursor: pointer;
     transition: ${transition.cubic};
     color: ${colors.text_accent};
+  }
+`;
+
+export const L = styled.a`
+  &:visited {
+    color: ${colors.text};
+    text-decoration: none;
   }
 `;
