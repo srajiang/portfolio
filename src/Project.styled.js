@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { colors_dark, colors_light, font, transition } from './theme';
+import { colors_dark, 
+         colors_light, 
+         font, 
+         transition, 
+         boxShadow 
+      } from './theme';
 
 // dark is default mode
 const colors = colors_dark;
@@ -14,11 +19,12 @@ export const Grid = styled.div`
 `;
 
 export const Card = styled.div`
-  border-radius: 4px;
+  border-radius: 3px;
   background-color: ${colors.background_secondary};
   padding: 1.5rem;
 
   position: relative;
+  box-shadow: ${boxShadow.medium};
 `;
 
 export const Title = styled.h2`

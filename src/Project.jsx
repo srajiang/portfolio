@@ -25,7 +25,7 @@ const Project = (fields) => {
         <CardTitle>{title}</CardTitle>
         <Desc>{desc_short}</Desc>
         <DescMeta>
-          { stack.map( (ele, idx) => <span className="tag" key={idx}>{ele}</span>)}
+          { stack && stack.map( (ele, idx) => <span className="tag" key={idx}>{ele}</span>)}
         </DescMeta>
      
       </Card>

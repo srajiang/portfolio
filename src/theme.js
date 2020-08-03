@@ -4,6 +4,7 @@ import { css } from 'styled-components';
 export const colors_dark = {
   background_primary: "#0D303B",
   background_secondary: "#2D5658",
+  background_shadow: "#021B1A",
   
   text_accent: "#FF737B", // contrast
 
@@ -59,7 +60,9 @@ export const transition = {
 };
 
 // ---------------------- Box Shadows
-
+export const boxShadow = {
+  medium: "rgba(2, 27, 26, 1) 0px 10px 30px -15px"
+}
 
 // ---------------------- Media Query Helper
 const breakpoints = {
