@@ -38,8 +38,8 @@ export const fontWeights = {
 
 export const fontSizes = {
   header: "4rem",
-  header_sm: "1.2rem", 
-  body: "1rem",
+  header_sm: "1.15rem", 
+  body: ".75rem",
   accent: ".8rem",
 }
 
@@ -66,8 +66,8 @@ export const boxShadow = {
 
 // ---------------------- Media Query Helper
 const breakpoints = {
-  desktop_lg: { px: 1000 },
-  desktop_sm: { px: 900 },
+  desktop_lg: { px: 1228 },
+  desktop_sm: { px: 600 },
   tablet: { px: 768 },
   mobile_lg: { px: 600} 
 }
@@ -85,7 +85,7 @@ export const mediaQuery = Object.keys(breakpoints).reduce((acc, mediaType) => {
   const { px } = breakpoints[mediaType];
   acc[mediaType] = (...args) => css`
   
-    @media (min-width: ${px}px) {
+    @media (max-width: ${px}px) {
       ${css(...args)};
     }
   `;

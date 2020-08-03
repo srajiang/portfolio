@@ -3,7 +3,8 @@ import { colors_dark,
          colors_light, 
          font, 
          transition, 
-         boxShadow 
+         boxShadow,
+         mediaQuery 
       } from './theme';
 
 // dark is default mode
@@ -12,10 +13,23 @@ const colors = colors_dark;
 // TODO: responsive logic needed
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: 400px 400px 400px; 
-  grid-template-rows: 300px 300px 300px;
+  grid-template-columns: 1fr 1fr 1fr;   
+  grid-template-rows: 300px 300px 300px;  
   column-gap: 12px;
   row-gap: 12px;
+
+  ${mediaQuery.desktop_lg`
+    grid-template-columns: 1fr 1fr;  
+    grid-template-rows: 350px 350px 350px;    
+  `}
+
+  ${mediaQuery.desktop_sm`
+    grid-template-columns: 1fr;     
+    grid-template-rows: 350px 350px 350px;    
+  `}
+
+
+
 `;
 
 export const Card = styled.div`
@@ -25,6 +39,8 @@ export const Card = styled.div`
 
   position: relative;
   box-shadow: ${boxShadow.medium};
+
+  min-width: 300px;
 `;
 
 export const Title = styled.h2`
@@ -43,7 +59,6 @@ export const CardTitle = styled(Title)`
 `;
 
 export const Desc = styled.p`
-
   color: ${colors.text};
   font-weight: ${font.weight.regular};
   font-family: ${font.family.body}, sans-serif;
@@ -72,7 +87,7 @@ export const DescMeta = styled.p`
 export const Link = styled.div`
 
   text-align: right;
-
+  padding-bottom: 5%;
   font-size: ${font.size.header_sm};
   color: ${colors.text};
 
