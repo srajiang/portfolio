@@ -3,6 +3,11 @@ import { FontAwesomeIcon as FA } from "@fortawesome/react-fontawesome";
 
 import { VertLink, VertL } from './ExternalLink.styled';
 
+/* 
+
+TODO: light dark mode, fade in transition on page-load
+
+*/
 export const ExternalLink = ({externalLinks}) => {
 
   let links = Object.values(externalLinks);

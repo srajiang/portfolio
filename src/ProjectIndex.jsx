@@ -22,7 +22,7 @@ class ProjectIndex extends React.Component {
     if (!data) return null;
     return (
       <>
-        <Title>Things I've Built</Title>
+        <Title>Projects</Title>
         <Grid>
             { data.map(
               record => <Project key={record.id} record={record.fields}/>

@@ -76,8 +76,8 @@ const breakpoints = {
 /* 
   exports a media query helper object
   with keys for all the media types (desktoplg, dtsml, and tablet)
-  and values are a function which accepts stringged template literals 
-  and return the correct min-width css syntax along with any other rules
+  and values are a function which accepts template literal argument
+  and returns the correct max-width css syntax along with any other rules
   supplied
 
  */

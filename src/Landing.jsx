@@ -2,14 +2,15 @@ import React from 'react';
 import ProjectIndex from './ProjectIndex';
 import { Body, Main } from './Landing.styled';
 import { ExternalLink as VertLink } from './ExternalLink';
+import Header from './Header'; 
 
 /* icon import  */
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt, faAdjust } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
-library.add(fab, faExternalLinkAlt, faEnvelope);
+library.add(fab, faExternalLinkAlt, faEnvelope, faAdjust);
 
 /* external links */
 export const externalLinks = {
@@ -26,8 +27,8 @@ const Landing = () => {
   return (
     <Body>
       <VertLink externalLinks={externalLinks} />
+      <Header />
       <Main>
-        {/* + navigation bar */}
         {/* + intro section */}
         {/* + about me section */}
         {/* + featured project section */}
