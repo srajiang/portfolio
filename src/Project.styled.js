@@ -96,17 +96,4 @@ export const Link = styled.div`
   & > .i {
     margin-left: 1rem;
   }
-
-  & > .i:hover {
-    cursor: pointer;
-    transition: ${transition.cubic};
-    color: ${colors.text_accent};
-  }
-`;
-
-export const L = styled.a`
-  &:visited {
-    color: ${colors.text};
-    text-decoration: none;
-  }
 `;

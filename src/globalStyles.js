@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import { colors_dark, colors_light } from './theme';
-import { L } from './Project.styled';
 
 /* 
   Credit: http://meyerweb.com/eric/tools/css/reset/ 

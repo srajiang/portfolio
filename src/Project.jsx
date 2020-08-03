@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardTitle, Desc, DescMeta, Link, L } from "./Project.styled";
+import { Card, CardTitle, Desc, DescMeta, Link } from "./Project.styled";
+import { L } from './Base.styled';
 import { FontAwesomeIcon as FA } from "@fortawesome/react-fontawesome";
 
 const Project = fields => {
