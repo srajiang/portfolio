@@ -14,15 +14,9 @@ const Header = () => {
   return (
     <>
       <NavHamburgerMenu>
-        <div className="hamburger-box one">
-          <Menu></Menu>
-        </div>
-        <div className="hamburger-box two">
-          <Menu></Menu>
-        </div>
-        <div className="hamburger-box three">
-          <Menu></Menu>
-        </div>
+        { ["one", "two", "three"].map(
+          (tag, i) => <div className={`hamburger-box ${tag}`} key={i}><Menu /></div>
+        ) }
       </NavHamburgerMenu>
       <NavBar>
         <NavLink>
