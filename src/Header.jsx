@@ -11,6 +11,12 @@ import { NavLink, NavBar, NavHamburgerMenu, Menu } from './Margin.styled';
 */
 
 const Header = () => {
+
+  const navLinks = [{tag: "About", url: ""}, 
+                    {tag: "Projects", url: ""}, 
+                    {tag: "Contact", url: ""},
+                  ];
+
   return (
     <>
       <NavHamburgerMenu>
@@ -20,15 +26,11 @@ const Header = () => {
       </NavHamburgerMenu>
       <NavBar>
         <NavLink>
-          <Link className="anchor">
-            <span>01 / </span>About
-          </Link>
-          <Link className="anchor">
-            <span>02 / </span>Projects
-          </Link>
-          <Link className="anchor">
-            <span>03 / </span>Contact
-          </Link>
+          {navLinks.map(
+            (link, i) => <Link className="anchor">
+              <span>0{i + 1} / </span>{link.tag}
+            </Link>
+          )}
           <Button className="">Resume</Button>
         </NavLink>
       </NavBar>
