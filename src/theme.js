@@ -17,15 +17,17 @@ export const colors_dark = {
 };
 
 export const colors_light = {
-  background_primary: "#EEEFF0",
-  background_secondary: "#E3E5EC",
+  background_primary: "#EEF0F0",
+  background_secondary: "#E1E3E3",
   background_shadow: "",
 
   text_accent: "#FE4F4F",
 
-  text_header_lg: "#33436F",
-  text_header_lg_sub: "#33436E",
-  text_header_sm:  "#33436F",
+  text_header_lg: "#285260",
+  text_header_lg_sub: "#828898",
+  text_header_sm:  "#285260",
+
+  text: "#535353"
 }
 
 // ---------------------- Font

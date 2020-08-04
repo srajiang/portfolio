@@ -1,6 +1,6 @@
 import React from 'react';
 import { B as Button, L as Link } from './Base.styled';
-import { NavLink, NavBar } from './Margin.styled';
+import { NavLink, NavBar, NavHamburgerMenu, Menu } from './Margin.styled';
 
 /* 
   TODO: 
@@ -12,20 +12,33 @@ import { NavLink, NavBar } from './Margin.styled';
 
 const Header = () => {
   return (
-    <NavBar>
-      <NavLink>
-        <Link className="anchor">
-          <span>01 / </span>About
-        </Link>
-        <Link className="anchor">
-          <span>02 / </span>Projects
-        </Link>
-        <Link className="anchor">
-          <span>03 / </span>Contact
-        </Link>
-        <Button className="">Resume</Button>
-      </NavLink>
-    </NavBar>
+    <>
+      <NavHamburgerMenu>
+        <div className="hamburger-box one">
+          <Menu></Menu>
+        </div>
+        <div className="hamburger-box two">
+          <Menu></Menu>
+        </div>
+        <div className="hamburger-box three">
+          <Menu></Menu>
+        </div>
+      </NavHamburgerMenu>
+      <NavBar>
+        <NavLink>
+          <Link className="anchor">
+            <span>01 / </span>About
+          </Link>
+          <Link className="anchor">
+            <span>02 / </span>Projects
+          </Link>
+          <Link className="anchor">
+            <span>03 / </span>Contact
+          </Link>
+          <Button className="">Resume</Button>
+        </NavLink>
+      </NavBar>
+    </>
   );
 }
 
