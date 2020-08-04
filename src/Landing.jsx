@@ -34,7 +34,6 @@ const Landing = () => {
 
   const [ theme, toggleTheme ] = useDarkMode();
   const currTheme = theme === 'light' ? colors_light : colors_dark ;
-  console.log(currTheme);
 
   return (
     <ThemeProvider theme={currTheme}>

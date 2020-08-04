@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { font, 
-         transition, 
          boxShadow,
          mediaQuery 
       } from './theme';

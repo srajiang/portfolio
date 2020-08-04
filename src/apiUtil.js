@@ -1,8 +1,9 @@
 const TABLE_NAME = 'projects';
 
-const Airtable = require('airtable');
+const Airtable = require("airtable");
 const portfolioBase = new Airtable({
-  apiKey: API_KEY}).base('appJ2zDoqvxeNEdQH');
+  apiKey: process.env.REACT_APP_API_KEY,
+}).base("appJ2zDoqvxeNEdQH");
 
 
 export async function fetchProjects() {
