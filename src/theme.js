@@ -30,6 +30,8 @@ export const colors_light = {
   text: "#535353"
 }
 
+/* #C5D3D7 #d8dbdb */
+
 // ---------------------- Font
 
 export const fontWeights = {

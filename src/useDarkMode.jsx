@@ -4,7 +4,6 @@ export const useDarkMode = () => {
   const [ theme, setTheme ] = useState('dark');
 
   const setMode = mode => {
-    console.log('setting', mode);
     window.localStorage.setItem('theme', mode);
     setTheme(mode);
   }

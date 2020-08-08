@@ -11,6 +11,7 @@ const Bar = styled.div`
   color: ${({theme}) => theme.text};
   font-family: ${font.family.accent};
   font-size: ${font.size.accent};
+
 `;
 
 export const FooterBar = styled(Bar)`
@@ -32,7 +33,7 @@ export const NavBar = styled(Bar)`
 `;
 
 export const NavHamburgerMenu = styled(Bar)`
-
+  cursor: pointer;
   display: none; 
 
   ${mediaQuery.desktop_sm`
@@ -76,5 +77,4 @@ export const NavLink = styled.div`
     color: ${({theme}) => theme.text_accent};
   }
 `;
-
 

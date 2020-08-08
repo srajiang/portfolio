@@ -40,7 +40,7 @@ const Landing = () => {
      
         <GlobalStyle />
         <Body>
-          <ModeToggle toggleTheme={toggleTheme} />   
+          <ModeToggle toggleTheme={toggleTheme} />   {/* move to nav? */}
           <VerticalNav externalLinks={externalLinks} />
           <Header />
           <Main>
