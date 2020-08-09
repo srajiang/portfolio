@@ -35,8 +35,8 @@ export const VertLink = styled.div`
 `;
 
 export const VertL = styled(L)`
-
-  margin-bottom: 25px;  
+  
+  padding-bottom: 25px;  
   transition: all 250ms ease-out;
 
   &:hover {
