@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectIndex from './ProjectIndex';
-import { Body, Main } from './Landing.styled';
+import { Body, Main, Section as S } from './Landing.styled';
 import { VerticalNav } from './VerticalNav';
 import Header from './Header'; 
 import Footer from './Footer';
@@ -47,7 +47,7 @@ const Landing = () => {
             {/* + intro section */}
             {/* + about me section */}
             {/* + featured project section */}
-            <ProjectIndex />
+            <S><ProjectIndex /></S>
           </Main>
           <Footer />
         </Body>

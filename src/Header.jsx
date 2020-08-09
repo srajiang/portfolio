@@ -32,7 +32,6 @@ const Header = () => {
 
   // toggles sticky nav effect when scroll dir changes
   const toggleStickyNav = () => {
-    console.log('toggling sticky nav');
   }
 
   useEffect(handleScroll, [currScrollY]);
@@ -45,14 +44,14 @@ const Header = () => {
 
   return (
     <>
-      <NavHamburgerMenu>
+      <NavHamburgerMenu YOffset={lastScrollY}>
         {["one", "two", "three"].map((tag, i) => (
           <div className={`hamburger-box ${tag}`} key={i}>
             <Menu />
           </div>
         ))}
       </NavHamburgerMenu>
-      <NavBar>
+      <NavBar YOffset={lastScrollY}>
         <NavLink>
           {navLinks.map((link, i) => (
             <Link key={i} className="anchor">
@@ -63,7 +62,6 @@ const Header = () => {
           <Button className="">Resume</Button>
         </NavLink>
       </NavBar>
-          <div> Direction: {scrollDir} last scroll y: {lastScrollY}</div>
     </>
   );
 }

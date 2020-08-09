@@ -5,6 +5,7 @@ export const colors_dark = {
   background_primary: "#042934",
   background_secondary: "#18484be3",
   background_shadow: "#021B1A",
+  box_shadow: "rgba(2,27,26,1)",
   
   text_accent: "#FF737B", // contrast
 
@@ -16,10 +17,15 @@ export const colors_dark = {
 
 };
 
+/* TODO: 
+  add background shadow
+  add appropriate box shadow 
+*/
 export const colors_light = {
   background_primary: "#EEF0F0",
   background_secondary: "#E1E3E3",
   background_shadow: "",
+  box_shadow: "rgba(2,27,26,1)",
 
   text_accent: "#FE4F4F",
 
@@ -30,7 +36,6 @@ export const colors_light = {
   text: "#535353"
 }
 
-/* #C5D3D7 #d8dbdb */
 
 // ---------------------- Font
 
@@ -43,6 +48,7 @@ export const fontWeights = {
 
 export const fontSizes = {
   header: "4rem",
+  header_med: "1.75rem",
   header_sm: "1.15rem", 
   body: ".75rem",
   accent: ".8rem",

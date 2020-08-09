@@ -6,6 +6,8 @@ import { font,
 
 
 export const Grid = styled.div`
+
+  margin-top: 65px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;   
   grid-template-rows: 300px 300px 300px;  

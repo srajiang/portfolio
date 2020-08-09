@@ -1,17 +1,67 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import { font, mediaQuery } from "./theme";
+
+/* kf animations for navbar scroll */
+const slideDown = keyframes`
+    from {
+      top: -100px;
+    }
+    to {
+      top: 0px;
+    }
+`; 
+
+const activate = keyframes`
+  from {
+      top: 0px;
+  }
+  to {
+    top: -5px;
+  }
+`;
+
+const slideUp = keyframes`
+  from {
+    top: initial;
+  }
+  to {
+    top: -100px;
+  }
+`;
+
 
 const Bar = styled.div`
   width: 100vw;
   height: 70px;
+  margin-top: 20px;
   display: flex;
-    align-items: center;
+  align-items: center;
 
-  color: ${({theme}) => theme.text};
+  color: ${({ theme }) => theme.text};
   font-family: ${font.family.accent};
   font-size: ${font.size.accent};
+  transition: all 0.2s ease-in;
 
+  ${({ YOffset, theme }) => {
+    if (YOffset === 0) {
+      return css`
+      `;
+    } else if (YOffset > 0 && YOffset < 100) {
+      return css`
+        animation: ${activate} 0.3s ease-in 1;
+        animation-fill-mode: forwards;
+        box-shadow: ${theme.box_shadow} 0px 10px 30px -10px;
+        position: -webkit-sticky;
+        position: sticky;
+      `;
+    } else if (YOffset > 99) {
+      return css`
+        animation: ${slideUp} 0.3s ease-in 1;
+        animation-fill-mode: forwards;
+      `;
+    }
+  }};
 `;
 
 export const FooterBar = styled(Bar)`
