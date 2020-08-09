@@ -29,6 +29,7 @@ const Header = ({theme, toggleTheme}) => {
   const [YOffset, setYOffset] = useState(0);
   const [lastYOffset, setLastYOffset] = useState(null);
   const [navState, setNavState] = useState(navOptions.INACTIVE);
+  const [lastNavState, setLastNavState] = useState(navOptions.INACTIVE);
 
   useEffect(() => {
     document.addEventListener('scroll', () => setYOffset(window.pageYOffset));
@@ -44,14 +45,17 @@ const Header = ({theme, toggleTheme}) => {
   }
   const throttledHandleScroll = throttle(handleScroll, 100)
 
-  // const determines based on Scroll Y position 
   const toggleNavState = () => {
-    if (YOffset <= Y_MIN) return setNavState(navOptions.INACTIVE);
+    if (YOffset <= Y_MIN) {
+      setNavState(navOptions.INACTIVE);
+      return;
+    }
+    
     if ( scrollDir === 'down') {
-       (YOffset > Y_MIN && YOffset < Y_MAX) 
-       ? setNavState(navOptions.ACTIVATE) 
+      (YOffset > Y_MIN  && YOffset < Y_MAX) 
+       ? setNavState(navOptions.ACTIVATE)
        : setNavState(navOptions.SLIDEUP);
-    } else if (scrollDir === "up" && YOffset > Y_MIN) {
+    } else if (scrollDir === "up" && YOffset >= Y_MAX ) {
       setNavState(navOptions.SLIDEDOWN);
     }
   }
