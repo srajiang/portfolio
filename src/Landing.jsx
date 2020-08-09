@@ -37,21 +37,21 @@ const Landing = () => {
 
   return (
     <ThemeProvider theme={currTheme}>
-     
-        <GlobalStyle />
-        <Body>
-          <ModeToggle toggleTheme={toggleTheme} />   {/* move to nav? */}
-          <VerticalNav externalLinks={externalLinks} />
-          <Header />
-          <Main>
-            {/* + intro section */}
-            {/* + about me section */}
-            {/* + featured project section */}
-            <S><ProjectIndex /></S>
-          </Main>
-          <Footer />
-        </Body>
-      
+      <GlobalStyle />
+      <Body>
+        {/* <ModeToggle toggleTheme={toggleTheme} />   move to nav? */}
+        <VerticalNav externalLinks={externalLinks} />
+        <Header theme={theme} toggleTheme={toggleTheme} />
+        <Main>
+          {/* + intro section */}
+          {/* + about me section */}
+          {/* + featured project section */}
+          <S>
+            <ProjectIndex />
+          </S>
+        </Main>
+        <Footer />
+      </Body>
     </ThemeProvider>
   );  
 }

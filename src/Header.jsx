@@ -2,16 +2,17 @@ import React from 'react';
 import { B as Button, L as Link } from './Base.styled';
 import { NavLink, NavBar, NavHamburgerMenu, Menu } from './Margin.styled';
 import { useState, useEffect } from 'react';
+import ModeToggle from "./ModeToggle";
+
 
 /* 
   TODO: 
   Add Nav href anchors + resume links
   Add vertical nav option
   Add logo? 
-  Sticky header / fixed header on scroll
 */
 
-const Header = () => {
+const Header = ({theme, toggleTheme}) => {
 
   const [scrollDir, setScrollDir] = useState(null);
   const [currScrollY, setCurrScrollY] = useState(0);
@@ -53,6 +54,12 @@ const Header = () => {
       </NavHamburgerMenu>
       <NavBar scrollDir={scrollDir} YOffset={lastScrollY}>
         <NavLink>
+          <Link className="anchor" onClick={toggleTheme}>
+            <span>
+              <ModeToggle toggleTheme={toggleTheme} />&nbsp;
+            </span>
+            {theme == "dark" ? `Light` : `Dark`}
+          </Link>
           {navLinks.map((link, i) => (
             <Link key={i} className="anchor">
               <span>0{i + 1} / </span>

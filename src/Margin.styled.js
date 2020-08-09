@@ -28,7 +28,7 @@ const slideDown = keyframes`
     top: -100px;
   }
   to {
-    top: 0px;
+    top: -10px;
   }
 `;
 
