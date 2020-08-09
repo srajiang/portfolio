@@ -25,7 +25,7 @@ export const colors_light = {
   background_primary: "#EEF0F0",
   background_secondary: "#E1E3E3",
   background_shadow: "",
-  box_shadow: "rgba(2,27,26,1)",
+  box_shadow: "rgba(13, 22, 20,0.31)",
 
   text_accent: "#FE4F4F",
 

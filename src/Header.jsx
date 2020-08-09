@@ -44,14 +44,14 @@ const Header = () => {
 
   return (
     <>
-      <NavHamburgerMenu YOffset={lastScrollY}>
+      <NavHamburgerMenu scrollDir={scrollDir} YOffset={lastScrollY}>
         {["one", "two", "three"].map((tag, i) => (
           <div className={`hamburger-box ${tag}`} key={i}>
             <Menu />
           </div>
         ))}
       </NavHamburgerMenu>
-      <NavBar YOffset={lastScrollY}>
+      <NavBar scrollDir={scrollDir} YOffset={lastScrollY}>
         <NavLink>
           {navLinks.map((link, i) => (
             <Link key={i} className="anchor">

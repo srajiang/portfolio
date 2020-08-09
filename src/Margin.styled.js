@@ -3,61 +3,77 @@ import styled, { css, keyframes } from 'styled-components';
 import { font, mediaQuery } from "./theme";
 
 /* kf animations for navbar scroll */
-const slideDown = keyframes`
-    from {
-      top: -100px;
-    }
-    to {
-      top: 0px;
-    }
-`; 
 
 const activate = keyframes`
-  from {
+  0% {
       top: 0px;
   }
-  to {
-    top: -5px;
+  
+  100% {
+    top: -10px;
   }
 `;
 
 const slideUp = keyframes`
   from {
-    top: initial;
+    top: 0;
   }
   to {
     top: -100px;
   }
 `;
 
+const slideDown = keyframes`
+  from { 
+    top: -100px;
+  }
+  to {
+    top: 0px;
+  }
+`;
+
+/* navbar constants */
+
+const MIN = 0;
+const MAX = 90;
 
 const Bar = styled.div`
+  z-index: 1;
+
   width: 100vw;
   height: 70px;
-  margin-top: 20px;
+  padding-top: 10px;
   display: flex;
   align-items: center;
 
   color: ${({ theme }) => theme.text};
+  background-color: ${({ theme }) => theme.background_primary};
   font-family: ${font.family.accent};
   font-size: ${font.size.accent};
   transition: all 0.2s ease-in;
 
-  ${({ YOffset, theme }) => {
-    if (YOffset === 0) {
+  ${({ scrollDir, YOffset, theme }) => {
+    if (YOffset <= MIN) return;
+    if (scrollDir === "down") {
       return css`
-      `;
-    } else if (YOffset > 0 && YOffset < 100) {
-      return css`
-        animation: ${activate} 0.3s ease-in 1;
-        animation-fill-mode: forwards;
         box-shadow: ${theme.box_shadow} 0px 10px 30px -10px;
         position: -webkit-sticky;
         position: sticky;
+        animation: ${() => {
+            return YOffset > MIN && YOffset < MAX ? activate : slideUp;
+          }}
+          0.1s ease-in 1;
+        animation-fill-mode: forwards;
       `;
-    } else if (YOffset > 99) {
+    } else if (scrollDir === "up") {
       return css`
-        animation: ${slideUp} 0.3s ease-in 1;
+        box-shadow: ${theme.box_shadow} 0px 10px 30px -10px;
+        position: -webkit-sticky;
+        position: sticky;
+        animation: ${() => {
+            return YOffset > MIN ? slideDown : "";
+          }}
+          0.1s ease-in 1;
         animation-fill-mode: forwards;
       `;
     }

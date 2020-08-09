@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { font, 
-         boxShadow,
          mediaQuery 
       } from './theme';
 
@@ -33,7 +32,7 @@ export const Card = styled.div`
   padding: 1.65rem;
 
   position: relative;
-  box-shadow: ${boxShadow.medium};
+  box-shadow: ${({theme}) => theme.box_shadow} 0px 10px 30px -15px;
 
   transition: all 250ms ease-out;
 
