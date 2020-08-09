@@ -10,7 +10,6 @@ import { ThemeProvider } from 'styled-components';
 import { useDarkMode } from './useDarkMode';
 import { colors_dark, colors_light } from './theme';
 import GlobalStyle from "./globalStyles"; // css reset
-import ModeToggle from './ModeToggle';
 
 /* icon import  */
 import { library } from '@fortawesome/fontawesome-svg-core';

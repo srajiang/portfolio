@@ -6,11 +6,11 @@ import { font, mediaQuery } from "./theme";
 
 const activate = keyframes`
   0% {
-      top: 0px;
+    top: 10px;
   }
   
   100% {
-    top: -10px;
+    top: 0px;
   }
 `;
 
@@ -35,14 +35,16 @@ const slideDown = keyframes`
 /* navbar constants */
 
 const MIN = 0;
-const MAX = 90;
+const MAX = 100;
 
 const Bar = styled.div`
   z-index: 1;
 
   width: 100vw;
   height: 70px;
-  padding-top: 10px;
+
+  position: relative;
+  top: 10px;
   display: flex;
   align-items: center;
 
@@ -50,7 +52,7 @@ const Bar = styled.div`
   background-color: ${({ theme }) => theme.background_primary};
   font-family: ${font.family.accent};
   font-size: ${font.size.accent};
-  transition: all 0.2s ease-in;
+  transition: all 0.25s ease-in;
 
   ${({ scrollDir, YOffset, theme }) => {
     if (YOffset <= MIN) return;
@@ -62,7 +64,7 @@ const Bar = styled.div`
         animation: ${() => {
             return YOffset > MIN && YOffset < MAX ? activate : slideUp;
           }}
-          0.1s ease-in 1;
+          0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0s 1;
         animation-fill-mode: forwards;
       `;
     } else if (scrollDir === "up") {
@@ -73,7 +75,7 @@ const Bar = styled.div`
         animation: ${() => {
             return YOffset > MIN ? slideDown : "";
           }}
-          0.1s ease-in 1;
+          0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 1;
         animation-fill-mode: forwards;
       `;
     }

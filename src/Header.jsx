@@ -1,4 +1,5 @@
 import React from 'react';
+import { throttle } from 'underscore';
 import { B as Button, L as Link } from './Base.styled';
 import { NavLink, NavBar, NavHamburgerMenu, Menu } from './Margin.styled';
 import { useState, useEffect } from 'react';
@@ -30,13 +31,9 @@ const Header = ({theme, toggleTheme}) => {
     
     setLastScrollY(currScrollY);
   }
+  const throttledHandleScroll = throttle(handleScroll, 100)
 
-  // toggles sticky nav effect when scroll dir changes
-  const toggleStickyNav = () => {
-  }
-
-  useEffect(handleScroll, [currScrollY]);
-  useEffect(toggleStickyNav, [scrollDir]);
+  useEffect(throttledHandleScroll, [currScrollY]);
 
   const navLinks = [{tag: "About", url: ""}, 
                     {tag: "Projects", url: ""}, 
@@ -58,7 +55,7 @@ const Header = ({theme, toggleTheme}) => {
             <span>
               <ModeToggle toggleTheme={toggleTheme} />&nbsp;
             </span>
-            {theme == "dark" ? `Light` : `Dark`}
+            {theme === "dark" ? `Light` : `Dark`}
           </Link>
           {navLinks.map((link, i) => (
             <Link key={i} className="anchor">
