@@ -12,28 +12,54 @@ import ModeToggle from "./ModeToggle";
   Add vertical nav option
   Add logo? 
 */
+const Y_MIN = 0;
+const Y_MAX = 100;
+
+const navOptions = {
+  INACTIVE: 0,
+  SLIDEUP: 1,
+  ACTIVATE: 2, 
+  SLIDEDOWN: 3,
+}
+
 
 const Header = ({theme, toggleTheme}) => {
 
   const [scrollDir, setScrollDir] = useState(null);
-  const [currScrollY, setCurrScrollY] = useState(0);
-  const [lastScrollY, setLastScrollY] = useState(null);
+  const [YOffset, setYOffset] = useState(0);
+  const [lastYOffset, setLastYOffset] = useState(null);
+  const [navState, setNavState] = useState(navOptions.INACTIVE);
 
   useEffect(() => {
-    document.addEventListener('scroll', () => setCurrScrollY(window.pageYOffset));
+    document.addEventListener('scroll', () => setYOffset(window.pageYOffset));
   }, []);
 
   // sets scroll direction based on curr vs. last scroll y pos
   const handleScroll = () => {
     
-    if (lastScrollY === null) return setLastScrollY(currScrollY);
-    (currScrollY > lastScrollY) ? setScrollDir('down'): setScrollDir('up');
+    if (lastYOffset === null) return setLastYOffset(YOffset);
+    (YOffset > lastYOffset) ? setScrollDir('down'): setScrollDir('up');
     
-    setLastScrollY(currScrollY);
+    setLastYOffset(YOffset);
   }
   const throttledHandleScroll = throttle(handleScroll, 100)
 
-  useEffect(throttledHandleScroll, [currScrollY]);
+  // const determines based on Scroll Y position 
+  const toggleNavState = () => {
+    if (YOffset <= Y_MIN) return setNavState(navOptions.INACTIVE);
+    if ( scrollDir === 'down') {
+       (YOffset > Y_MIN && YOffset < Y_MAX) 
+       ? setNavState(navOptions.ACTIVATE) 
+       : setNavState(navOptions.SLIDEUP);
+    } else if (scrollDir === "up" && YOffset > Y_MIN) {
+      setNavState(navOptions.SLIDEDOWN);
+    }
+  }
+  
+  
+  useEffect(throttledHandleScroll, [YOffset]);
+  useEffect(toggleNavState, [lastYOffset])
+
 
   const navLinks = [{tag: "About", url: ""}, 
                     {tag: "Projects", url: ""}, 
@@ -42,14 +68,14 @@ const Header = ({theme, toggleTheme}) => {
 
   return (
     <>
-      <NavHamburgerMenu scrollDir={scrollDir} YOffset={lastScrollY}>
+      <NavHamburgerMenu navState={navState}>
         {["one", "two", "three"].map((tag, i) => (
           <div className={`hamburger-box ${tag}`} key={i}>
             <Menu />
           </div>
         ))}
       </NavHamburgerMenu>
-      <NavBar scrollDir={scrollDir} YOffset={lastScrollY}>
+      <NavBar navState={navState}>
         <NavLink>
           <Link className="anchor" onClick={toggleTheme}>
             <span>

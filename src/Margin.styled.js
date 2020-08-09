@@ -32,11 +32,6 @@ const slideDown = keyframes`
   }
 `;
 
-/* navbar constants */
-
-const MIN = 0;
-const MAX = 100;
-
 const Bar = styled.div`
   z-index: 1;
 
@@ -54,31 +49,27 @@ const Bar = styled.div`
   font-size: ${font.size.accent};
   transition: all 0.25s ease-in;
 
-  ${({ scrollDir, YOffset, theme }) => {
-    if (YOffset <= MIN) return;
-    if (scrollDir === "down") {
+  ${({ navState, theme }) => {
+    if (navState === 0) return;
       return css`
         box-shadow: ${theme.box_shadow} 0px 10px 30px -10px;
         position: -webkit-sticky;
         position: sticky;
         animation: ${() => {
-            return YOffset > MIN && YOffset < MAX ? activate : slideUp;
+            switch (navState) {
+              case 1:
+                return slideUp;
+              case 2:
+                return activate;
+              case 3:
+                return slideDown;
+              default:
+                return;
+            }
           }}
           0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0s 1;
         animation-fill-mode: forwards;
       `;
-    } else if (scrollDir === "up") {
-      return css`
-        box-shadow: ${theme.box_shadow} 0px 10px 30px -10px;
-        position: -webkit-sticky;
-        position: sticky;
-        animation: ${() => {
-            return YOffset > MIN ? slideDown : "";
-          }}
-          0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 1;
-        animation-fill-mode: forwards;
-      `;
-    }
   }};
 `;
 
