@@ -33,7 +33,6 @@ const slideDown = keyframes`
 `;
 
 const Bar = styled.div`
-  z-index: 1;
 
   width: 100vw;
   height: 70px;
@@ -83,11 +82,32 @@ export const FooterBar = styled(Bar)`
 `;
 
 export const NavBar = styled(Bar)`
-  justify-content: flex-end;
+  
+justify-content: space-between;
 
   ${mediaQuery.desktop_sm`
     display: none;
   `} 
+
+  .ui-toggle {
+    padding-left: 50px;
+  }
+
+  & .ui-dark {
+    color: ${({theme}) => {
+      if (theme.isDark) {
+        return theme.background_primary;
+      }
+    }};
+  }
+
+  & .ui-light {
+    color: ${({theme}) => {
+      if (!theme.isDark) {
+        return theme.background_primary;
+      }
+    }};
+  }
 
 `;
 
@@ -127,6 +147,7 @@ export const NavLink = styled.div`
   padding-right: 25px;
   text-align: right;
   font-size: ${font.size.accent};
+  position: relative;
 
   & .anchor{
     padding-right: 1.5rem;
@@ -135,5 +156,6 @@ export const NavLink = styled.div`
   .anchor > span {
     color: ${({theme}) => theme.text_accent};
   }
+
 `;
 

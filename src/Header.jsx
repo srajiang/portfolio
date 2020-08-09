@@ -1,6 +1,6 @@
 import React from 'react';
 import { throttle } from 'underscore';
-import { B as Button, L as Link } from './Base.styled';
+import { B, L } from './Base.styled';
 import { NavLink, NavBar, NavHamburgerMenu, Menu } from './Margin.styled';
 import { useState, useEffect } from 'react';
 import ModeToggle from "./ModeToggle";
@@ -22,14 +22,12 @@ const navOptions = {
   SLIDEDOWN: 3,
 }
 
-
 const Header = ({theme, toggleTheme}) => {
 
   const [scrollDir, setScrollDir] = useState(null);
   const [YOffset, setYOffset] = useState(0);
   const [lastYOffset, setLastYOffset] = useState(null);
   const [navState, setNavState] = useState(navOptions.INACTIVE);
-  const [lastNavState, setLastNavState] = useState(navOptions.INACTIVE);
 
   useEffect(() => {
     document.addEventListener('scroll', () => setYOffset(window.pageYOffset));
@@ -59,8 +57,7 @@ const Header = ({theme, toggleTheme}) => {
       setNavState(navOptions.SLIDEDOWN);
     }
   }
-  
-  
+    
   useEffect(throttledHandleScroll, [YOffset]);
   useEffect(toggleNavState, [lastYOffset])
 
@@ -80,20 +77,23 @@ const Header = ({theme, toggleTheme}) => {
         ))}
       </NavHamburgerMenu>
       <NavBar navState={navState}>
+        <L className="ui-toggle" onClick={toggleTheme}>
+          <span>
+            <ModeToggle toggleTheme={toggleTheme} />
+            &nbsp;
+          </span>
+          <span className="ui-light">light</span>
+          <span> / </span>
+          <span className="ui-dark">dark</span>
+        </L>
         <NavLink>
-          <Link className="anchor" onClick={toggleTheme}>
-            <span>
-              <ModeToggle toggleTheme={toggleTheme} />&nbsp;
-            </span>
-            {theme === "dark" ? `Light` : `Dark`}
-          </Link>
           {navLinks.map((link, i) => (
-            <Link key={i} className="anchor">
+            <L key={i} className="anchor">
               <span>0{i + 1} / </span>
               {link.tag}
-            </Link>
+            </L>
           ))}
-          <Button className="">Resume</Button>
+          <B className="">Resume</B>
         </NavLink>
       </NavBar>
     </>

@@ -1,9 +1,10 @@
 import React from 'react';
 import ProjectIndex from './ProjectIndex';
-import { Body, Main, Section as S } from './Landing.styled';
+import { Body, Main, Section as S} from './Landing.styled';
 import { VerticalNav } from './VerticalNav';
 import Header from './Header'; 
 import Footer from './Footer';
+import ModeToggle from './ModeToggle';
 
 /* dark light mode */
 import { ThemeProvider } from 'styled-components';
@@ -38,7 +39,6 @@ const Landing = () => {
     <ThemeProvider theme={currTheme}>
       <GlobalStyle />
       <Body>
-        {/* <ModeToggle toggleTheme={toggleTheme} />   move to nav? */}
         <VerticalNav externalLinks={externalLinks} />
         <Header theme={theme} toggleTheme={toggleTheme} />
         <Main>

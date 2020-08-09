@@ -13,7 +13,8 @@ export const colors_dark = {
   text_header_lg_sub: "#908888",
   text_header_sm: "#dde5ea",
   
-  text: "#C1BFC6" // body text
+  text: "#C1BFC6", // body text
+  isDark: true,
 
 };
 
@@ -22,8 +23,8 @@ export const colors_dark = {
   add appropriate box shadow 
 */
 export const colors_light = {
-  background_primary: "#EEF0F0",
-  background_secondary: "#E1E3E3",
+  background_primary: "#dbdfdf",
+  background_secondary: "#e7e7e7",
   background_shadow: "",
   box_shadow: "rgba(13, 22, 20,0.31)",
 
@@ -33,7 +34,8 @@ export const colors_light = {
   text_header_lg_sub: "#828898",
   text_header_sm:  "#285260",
 
-  text: "#535353"
+  text: "#535353",
+  isDark: false,
 }
 
 
