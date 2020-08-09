@@ -7,6 +7,7 @@ const Toggle = styled.button`
   cursor: pointer;
   background: transparent;
   border:none;
+  font-size: 1.25rem;
 
   color: ${({theme}) => theme.text};
 `;

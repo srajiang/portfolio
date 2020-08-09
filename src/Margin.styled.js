@@ -93,21 +93,6 @@ justify-content: space-between;
     padding-left: 50px;
   }
 
-  & .ui-dark {
-    color: ${({theme}) => {
-      if (theme.isDark) {
-        return theme.background_primary;
-      }
-    }};
-  }
-
-  & .ui-light {
-    color: ${({theme}) => {
-      if (!theme.isDark) {
-        return theme.background_primary;
-      }
-    }};
-  }
 
 `;
 

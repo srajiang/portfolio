@@ -80,11 +80,12 @@ const Header = ({theme, toggleTheme}) => {
         <L className="ui-toggle" onClick={toggleTheme}>
           <span>
             <ModeToggle toggleTheme={toggleTheme} />
-            &nbsp;
+            &nbsp;/&nbsp;
           </span>
-          <span className="ui-light">light</span>
+          {theme === "dark" ? "light" : "dark"}
+          {/* <span className="ui-light">light</span>
           <span> / </span>
-          <span className="ui-dark">dark</span>
+          <span className="ui-dark">dark</span> */}
         </L>
         <NavLink>
           {navLinks.map((link, i) => (
