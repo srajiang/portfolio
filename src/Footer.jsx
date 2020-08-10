@@ -10,7 +10,7 @@ const Footer = () => {
         Built by Sarah Jiang
       </p>
       <p>
-        Design + Inspiration <L href="https://brittanychiang.com/">here</L>.
+        Design credits <L href="https://brittanychiang.com/">here</L>.
       </p>
     </FooterBar>
   );

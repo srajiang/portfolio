@@ -2,26 +2,22 @@ import { css } from 'styled-components';
 // ---------------------- Colors
 
 export const colors_dark = {
-  background_primary: "#042934",
-  background_secondary: "#18484be3",
+  background_primary: "#002732",
+  background_secondary: "#18494be3",
   background_shadow: "#021B1A",
   box_shadow: "rgba(2,27,26,1)",
   
   text_accent: "#FF737B", // contrast
 
-  text_header_lg: "#E3E3E3",
-  text_header_lg_sub: "#908888",
-  text_header_sm: "#dde5ea",
+  text_header_lg: "#cdcfcf",
+  text_header_lg_sub: "#828788",
+  text_header_sm: "#cdcfcf",
   
   text: "#C1BFC6", // body text
   isDark: true,
 
 };
 
-/* TODO: 
-  add background shadow
-  add appropriate box shadow 
-*/
 export const colors_light = {
   background_primary: "#dbdfdf",
   background_secondary: "#e7e7e7",
@@ -31,7 +27,7 @@ export const colors_light = {
   text_accent: "#FE4F4F",
 
   text_header_lg: "#285260",
-  text_header_lg_sub: "#828898",
+  text_header_lg_sub: "#839195",
   text_header_sm:  "#285260",
 
   text: "#535353",

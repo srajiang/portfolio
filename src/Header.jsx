@@ -10,7 +10,6 @@ import ModeToggle from "./ModeToggle";
   TODO: 
   Add Nav href anchors + resume links
   Add vertical nav option
-  Add logo? 
 */
 const Y_MIN = 0;
 const Y_MAX = 100;
@@ -30,7 +29,9 @@ const Header = ({theme, toggleTheme}) => {
   const [navState, setNavState] = useState(navOptions.INACTIVE);
 
   useEffect(() => {
-    document.addEventListener('scroll', () => setYOffset(window.pageYOffset));
+    document.addEventListener('scroll', () => { 
+      setYOffset(window.pageYOffset) 
+    } );
   }, []);
 
   // sets scroll direction based on curr vs. last scroll y pos
@@ -78,10 +79,8 @@ const Header = ({theme, toggleTheme}) => {
       </NavHamburgerMenu>
       <NavBar navState={navState}>
         <L className="ui-toggle" onClick={toggleTheme}>
-          <span>
             <ModeToggle toggleTheme={toggleTheme} />
             &nbsp;/&nbsp;
-          </span>
           {theme === "dark" ? "light" : "dark"}
         </L>
         <NavLink>

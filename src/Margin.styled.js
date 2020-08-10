@@ -67,7 +67,8 @@ justify-content: space-between;
   `} 
 
   .ui-toggle {
-    padding-left: 50px;
+    position: relative;
+    padding-left: 100px;
   }
 
   transition: all 0.25s ease-in;

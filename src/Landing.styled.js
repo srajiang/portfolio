@@ -3,7 +3,7 @@ import { Title } from './Project.styled';
 import { font } from './theme';
 
 export const Main = styled.main`
-  width: 70vw;
+  width: 60vw;
   margin: 0 auto;
 `;
 

@@ -24,7 +24,7 @@ class ProjectIndex extends React.Component {
     return (
       <>
         <SectionTitle>Projects</SectionTitle>
-        <SectionAccent>Stuff I've Built</SectionAccent>
+        <SectionAccent>Stuff I've built</SectionAccent>
         <Grid>
             { data.map(
               record => <Project key={record.id} record={record.fields}/>

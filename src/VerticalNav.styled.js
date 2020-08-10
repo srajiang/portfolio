@@ -30,13 +30,13 @@ export const VertLink = styled.div`
     height: 100px;
     margin: 0 auto;
     display: block;
-    background-color: ${ ({ theme }) => theme.text};
+    background-color: ${ ({ theme }) => theme.text_header_lg_sub};
   }
 
 `;
 
 export const VertL = styled(L)`
-  
+  color: ${ ({ theme }) => theme.text_header_lg_sub};
   padding-bottom: 25px;  
   transition: all 250ms ease-out;
 

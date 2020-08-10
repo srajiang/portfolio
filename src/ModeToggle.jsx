@@ -8,6 +8,9 @@ const Toggle = styled.button`
   background: transparent;
   border:none;
   font-size: 1.25rem;
+  position: absolute;
+  top: -8px;
+  left: 50px;
 
   color: ${({theme}) => theme.text};
 `;
