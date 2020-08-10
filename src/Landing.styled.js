@@ -26,8 +26,7 @@ export const SectionTitle = styled(Title)`
   font-size: ${font.size.header_med};
 `;
 
-export const SectionAccent = styled(Title)`
-  display: inline;
+export const SectionAccent = styled.span`
   text-align: center;
   font-family: ${font.family.accent};
   font-size: calc( 1.2 * ${font.size.accent});

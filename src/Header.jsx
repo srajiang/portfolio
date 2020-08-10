@@ -44,12 +44,12 @@ const Header = ({theme, toggleTheme}) => {
   }
   const throttledHandleScroll = throttle(handleScroll, 200)
 
+  // handles nav bar state change based on Y Offset and Scroll Direction
   const toggleNavState = () => {
     if (YOffset <= Y_MIN) {
       setNavState(navOptions.INACTIVE);
       return;
     }
-    
     if ( scrollDir === 'down') {
       (YOffset > Y_MIN  && YOffset < Y_MAX) 
        ? setNavState(navOptions.ACTIVATE)
@@ -61,7 +61,6 @@ const Header = ({theme, toggleTheme}) => {
     
   useEffect(throttledHandleScroll, [YOffset]);
   useEffect(toggleNavState, [lastYOffset])
-
 
   const navLinks = [{tag: "About", url: ""}, 
                     {tag: "Projects", url: ""}, 

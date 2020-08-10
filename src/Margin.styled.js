@@ -81,11 +81,11 @@ justify-content: space-between;
         position: sticky;
         animation: ${() => {
             switch (navState) {
-              case 1:
+              case 1: /* SLIDEUP */
                 return slideUp;
-              case 2:
+              case 2: /* ACTIVATE */
                 return activate;
-              case 3:
+              case 3: /* SLIDEDOWN */
                 return slideDown;
               default:
                 return;
