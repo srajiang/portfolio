@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 import { Title } from './Project.styled';
-import { font } from './theme';
+import { font, mediaQuery } from './theme';
 
 export const Main = styled.main`
   width: 60vw;
+  min-width: ;
   margin: 0 auto;
+
+  ${mediaQuery.desktop_sm`
+    width: 75vw;
+  `}
 `;
 
 export const Body = styled.div`
@@ -21,10 +26,11 @@ export const SectionTitle = styled(Title)`
   font-size: ${font.size.header_med};
 `;
 
-export const SectionAccent = styled.p`
+export const SectionAccent = styled(Title)`
+  display: inline;
   text-align: center;
   font-family: ${font.family.accent};
-  font-size: ${font.size.accent};
+  font-size: calc( 1.2 * ${font.size.accent});
   color: ${({theme}) => theme.text_accent}; 
   margin-top: 10px;
 `;

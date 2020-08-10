@@ -23,12 +23,15 @@ class ProjectIndex extends React.Component {
     if (!data) return null;
     return (
       <>
-        <SectionTitle>Projects</SectionTitle>
-        <SectionAccent>Stuff I've built</SectionAccent>
+        <SectionTitle>
+          <SectionAccent>03 / </SectionAccent>
+          Projects
+        </SectionTitle>
+
         <Grid>
-            { data.map(
-              record => <Project key={record.id} record={record.fields}/>
-            )}
+          {data.map((record) => (
+            <Project key={record.id} record={record.fields} />
+          ))}
         </Grid>
       </>
     );  

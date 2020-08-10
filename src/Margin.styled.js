@@ -98,7 +98,7 @@ justify-content: space-between;
 
 `;
 
-export const NavHamburgerMenu = styled(Bar)`
+export const NavHamburgerMenu = styled(NavBar)`
   cursor: pointer;
   display: none; 
 

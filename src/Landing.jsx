@@ -5,6 +5,7 @@ import { VerticalNav } from './VerticalNav';
 import Header from './Header'; 
 import Footer from './Footer';
 import Greeting from './Greeting';
+import About from './About';
 
 /* dark light mode */
 import { ThemeProvider } from 'styled-components';
@@ -42,14 +43,10 @@ const Landing = () => {
         <VerticalNav externalLinks={externalLinks} />
         <Header theme={theme} toggleTheme={toggleTheme} />
         <Main>
-          <S>
-            <Greeting />
-          </S>
-          {/* + about me section */}
+          <S><Greeting /></S>
+          <S><About /></S>
           {/* + featured project section */}
-          <S>
-            <ProjectIndex />
-          </S>
+          <S><ProjectIndex /></S>
         </Main>
         <Footer />
       </Body>

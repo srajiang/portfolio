@@ -76,7 +76,7 @@ export const boxShadow = {
 // ---------------------- Media Query Helper
 const breakpoints = {
   desktop_lg: { px: 1228 },
-  desktop_sm: { px: 600 },
+  desktop_sm: { px: 670 },
   tablet: { px: 768 },
   mobile_lg: { px: 600} 
 }
