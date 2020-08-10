@@ -7,6 +7,7 @@ import {
 
 export const VertLink = styled.div`
   
+  z-index: 2;
   font-size: 1.25rem;
 
   display: flex;

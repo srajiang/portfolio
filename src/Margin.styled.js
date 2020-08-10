@@ -47,29 +47,6 @@ const Bar = styled.div`
   font-family: ${font.family.accent};
   font-size: ${font.size.accent};
   transition: all 0.25s ease-in;
-
-  ${({ navState, theme }) => {
-    if (navState === 0) return;
-      return css`
-        box-shadow: ${theme.box_shadow} 0px 10px 30px -10px;
-        position: -webkit-sticky;
-        position: sticky;
-        animation: ${() => {
-            switch (navState) {
-              case 1:
-                return slideUp;
-              case 2:
-                return activate;
-              case 3:
-                return slideDown;
-              default:
-                return;
-            }
-          }}
-          0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0s 1;
-        animation-fill-mode: forwards;
-      `;
-  }};
 `;
 
 export const FooterBar = styled(Bar)`
@@ -93,6 +70,30 @@ justify-content: space-between;
     padding-left: 50px;
   }
 
+  transition: all 0.25s ease-in;
+
+  ${({ navState, theme }) => {
+    if (navState === 0) return;
+      return css`
+        box-shadow: ${theme.box_shadow} 0px 10px 30px -10px;
+        position: -webkit-sticky;
+        position: sticky;
+        animation: ${() => {
+            switch (navState) {
+              case 1:
+                return slideUp;
+              case 2:
+                return activate;
+              case 3:
+                return slideDown;
+              default:
+                return;
+            }
+          }}
+          0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0s 1;
+        animation-fill-mode: forwards;
+      `;
+  }};
 
 `;
 

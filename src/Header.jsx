@@ -41,7 +41,7 @@ const Header = ({theme, toggleTheme}) => {
     
     setLastYOffset(YOffset);
   }
-  const throttledHandleScroll = throttle(handleScroll, 100)
+  const throttledHandleScroll = throttle(handleScroll, 200)
 
   const toggleNavState = () => {
     if (YOffset <= Y_MIN) {
@@ -83,9 +83,6 @@ const Header = ({theme, toggleTheme}) => {
             &nbsp;/&nbsp;
           </span>
           {theme === "dark" ? "light" : "dark"}
-          {/* <span className="ui-light">light</span>
-          <span> / </span>
-          <span className="ui-dark">dark</span> */}
         </L>
         <NavLink>
           {navLinks.map((link, i) => (
