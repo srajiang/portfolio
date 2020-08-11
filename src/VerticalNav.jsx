@@ -7,7 +7,6 @@ import { VertLink, VertL } from './VerticalNav.styled';
 
 TODO: 
   fade in transition on page-load
-
 */
 export const VerticalNav = ({externalLinks}) => {
 

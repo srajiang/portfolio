@@ -24,7 +24,7 @@ class ProjectIndex extends React.Component {
     return (
       <>
         <SectionTitle>
-          <SectionAccent>03 / </SectionAccent>
+          <SectionAccent>02 / </SectionAccent>
           Projects
         </SectionTitle>
 
