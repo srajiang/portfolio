@@ -12,8 +12,28 @@ export const Bio = styled.section`
 
 export const Link = styled(L)`
   position: relative;
+  display: inline-block;
   font-family: ${font.family.body};
   color: ${({theme}) => theme.text_accent };
+
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: ${({theme}) => theme.text_accent};
+    visibiity: hidden;
+    transform: scaleX(0);
+    transition: all .25s ease-in-out 0s;
+  }
+
+  &:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+  }
 `;
 
 export const PhotoContainer = styled.div`
@@ -24,7 +44,7 @@ export const PhotoContainer = styled.div`
   /* hover-off transitions */
   & #photo, #overlay, #underline {
     webkit-transition: all .15s ease-in;
-    transition: all .10s ease-in;
+    transition: all .15s ease-in;
     transform: translate(-1px, -1px);
   }
 
@@ -36,8 +56,8 @@ export const PhotoContainer = styled.div`
   /* hover-on transitions */
   &:hover {
     #photo, #overlay, #underline {
-      transition: all .10s ease-out;
-      webkit-transition: all .10s ease-out;
+      transition: all .15s ease-out;
+      webkit-transition: all .15s ease-out;
       transform: translate(1px, 1px);
     }
 
