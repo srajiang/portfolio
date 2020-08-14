@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Fragment as F} from 'react';
 import { fetchBio } from './apiUtil';
 import { SectionTitle, SectionAccent } from "./Landing.styled";
 import { Bio, Photo, Link } from './About.styled';
@@ -34,24 +34,22 @@ const About = () => {
   const formatList = (displayNames, urls) => {
 
     let links = formatLinks(displayNames, urls);
-    
-    let formattedLinks = [];
+    let linksInSentenceForm = [];
+
     for (let i = 0; i < links.length; i++) {
-      formattedLinks.push(
-      <>
+      linksInSentenceForm.push(
+      <F key={i}>
         {i === (links.length - 1)
-            ? (<>
-              {"and "}<Link target="_blank" href={links[i].url}>{links[i].name}</Link>
-              </>)
+            ? (<>{"and "}<Link target="_blank" href={links[i].url}>{links[i].name}</Link></>)
             : (<>
-              <Link target="_blank" href={links[i].url}>{links[i].name}</Link>{", "}
+                <Link target="_blank" href={links[i].url}>{links[i].name}</Link>{", "}
               </>)
         }
-      </>
+      </F>
       )
     }
 
-    return formattedLinks;
+    return linksInSentenceForm;
   }
 
   return (
@@ -74,7 +72,7 @@ const About = () => {
             </p>
             <br></br>
             <p>
-            {bio.personal_statement}. Most currently, {bio.activity} at {bio.employer_current}. 
+            {bio.personal_statement} Currently {bio.activity} at {bio.employer_current}. 
             </p>
 
         </Body>
