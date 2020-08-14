@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { fetchBio } from './apiUtil';
 import { SectionTitle, SectionAccent } from "./Landing.styled";
-import { Bio, Photo } from './About.styled';
+import { Bio, Photo, Link } from './About.styled';
 import { Body } from './Base.styled'
 
 const About = () => {
   
   const [ bio, setBio ] = useState(null);
-  const [ linkDetails, setLinkDetails ] = useState({});
 
   useEffect(() => {
    
@@ -19,12 +18,40 @@ const About = () => {
     fetchData();
   }, [])
   
-  const listItems = (arr) => {
-    let stringList = "";
-    for (let i = 0 ; i < arr.length -1 ; i++) {
-      stringList = stringList.concat(arr[i],", ");
+  // reads current link display names + urls and formats into an array of objs
+  const formatLinks = (displayNames, urls) => {
+    let linkList = [];
+    for (let i = 0; i < displayNames.length; i++) {
+      let link = {};
+      link["name"] = displayNames[i];
+      link["url"] = urls[i]
+      linkList.push(link);
     }
-    return stringList.concat(" and ", arr[arr.length -1]);
+    return linkList;
+  }
+
+  // returns links in sentence format
+  const formatList = (displayNames, urls) => {
+
+    let links = formatLinks(displayNames, urls);
+    
+    let formattedLinks = [];
+    for (let i = 0; i < links.length; i++) {
+      formattedLinks.push(
+      <>
+        {i === (links.length - 1)
+            ? (<>
+              {"and "}<Link target="_blank" href={links[i].url}>{links[i].name}</Link>
+              </>)
+            : (<>
+              <Link target="_blank" href={links[i].url}>{links[i].name}</Link>{", "}
+              </>)
+        }
+      </>
+      )
+    }
+
+    return formattedLinks;
   }
 
   return (
@@ -42,7 +69,8 @@ const About = () => {
             <br></br>
             <p>
               I'm an engineer with a background in design. I got
-              my start working at places like {listItems(bio.employer_past)}. 
+              my start working at places like {formatList(bio.display_name, bio.link)
+              }. 
             </p>
             <br></br>
             <p>

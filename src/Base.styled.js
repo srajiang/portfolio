@@ -8,6 +8,7 @@ import {
 export const L = styled.a`
   color: ${({theme}) => theme.text};
   font-family: ${font.family.accent};
+  text-decoration: none;
 
   &:hover {
     cursor: pointer;
