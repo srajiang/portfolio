@@ -25,7 +25,7 @@ class ProjectIndex extends React.Component {
       <>
         <SectionTitle>
           <SectionAccent>02 / </SectionAccent>
-          Projects
+          Other Projects
         </SectionTitle>
 
         <Grid>

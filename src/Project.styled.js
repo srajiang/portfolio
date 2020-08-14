@@ -9,18 +9,18 @@ export const Grid = styled.div`
   margin-top: 65px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;   
-  grid-template-rows: 300px 300px 300px 300px;  
+  grid-auto-rows: 300px;  
   column-gap: 15px;
   row-gap: 15px;
 
   ${mediaQuery.desktop_lg`
     grid-template-columns: 1fr 1fr;  
-    grid-template-rows: 350px 350px 350px;    
+    grid-auto-rows: 350px;    
   `}
 
   ${mediaQuery.desktop_sm`
     grid-template-columns: 1fr;     
-    grid-template-rows: 350px 350px 350px;    
+    grid-auto-rows: 350px;
     min-width: 300px;
   `}
 

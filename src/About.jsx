@@ -1,7 +1,7 @@
 import React, { useEffect, useState, Fragment} from 'react';
 import { fetchBio } from './apiUtil';
 import { SectionTitle, SectionAccent } from "./Landing.styled";
-import { Bio, Photo, Link } from './About.styled';
+import { Bio, Photo, PhotoOverlay, PhotoContainer, PhotoUnderLine, Link } from './About.styled';
 import { Body } from './Base.styled'
 
 /* 
@@ -72,7 +72,14 @@ const About = () => {
             </p>
           </Body>
         }
-        <Photo/>
+        {
+          bio !== null &&  
+          <PhotoContainer>
+            <Photo id="photo" src={bio.img[0]["url"]}/>
+            <PhotoOverlay id="overlay" />
+            <PhotoUnderLine id="underline" />
+          </PhotoContainer>
+        }
       </Bio>
     </>
   );

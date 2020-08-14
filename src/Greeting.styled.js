@@ -2,14 +2,6 @@ import styled from 'styled-components';
 import { font, mediaQuery } from './theme';
 import { B } from './Base.styled';
 
-export const Greeting = styled.div`
-  // padding-left: 5vw;
-
-  // ${mediaQuery.desktop_sm`
-  //   padding-left: 0;
-  // `}
-`;
-
 export const Accent = styled.h3`
   font-size: ${font.size.text_header_sm};
   font-family: ${font.family.accent};
