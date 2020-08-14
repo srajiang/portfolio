@@ -45,3 +45,15 @@ export const B = styled.a`
     background: rgba(255, 115, 123, .2);
   }
 `;
+
+// default main body 
+export const Body = styled.div`
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  line-height: 1.65rem;
+  max-width: 500px;
+  font-size: ${font.size.header_sm};
+  font-weight: ${font.weight.light};
+  font-family: ${font.family.body};
+  color: ${({ theme }) => theme.text_header_lg_sub};
+`;

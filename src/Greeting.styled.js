@@ -3,11 +3,11 @@ import { font, mediaQuery } from './theme';
 import { B } from './Base.styled';
 
 export const Greeting = styled.div`
-  padding-left: 5vw;
+  // padding-left: 5vw;
 
-  ${mediaQuery.desktop_sm`
-    padding-left: 0;
-  `}
+  // ${mediaQuery.desktop_sm`
+  //   padding-left: 0;
+  // `}
 `;
 
 export const Accent = styled.h3`
@@ -42,17 +42,6 @@ export const SubTitle = styled(Title)`
     font-weight: ${font.weight.light};
   }
 
-`;
-
-export const Body = styled.div`
-  padding-top: 2rem;
-  padding-bottom: 4rem;
-  line-height: 1.65rem;
-  max-width: 500px;
-  font-size: ${font.size.header_sm};
-  font-weight: ${font.weight.light};
-  font-family: ${font.family.body};
-  color: ${({theme}) => theme.text_header_lg_sub};
 `;
 
 export const Button = styled(B)`

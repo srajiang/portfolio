@@ -1,9 +1,10 @@
 import React from 'react';
-import { Greeting as G, Accent, Title, SubTitle, Body, Button as B } from './Greeting.styled';
+import { Accent, Title, SubTitle, Button as B } from './Greeting.styled';
+import { Body } from './Base.styled'
 
 const Greeting = () => {
   return (
-    <G>
+    <>
       <Accent>Hi, my name is</Accent>
       <Title>Sarah Jiang.</Title>
       <SubTitle>
@@ -24,7 +25,7 @@ const Greeting = () => {
         </p>
       </Body>
       <B>Let's chat</B>
-    </G>
+    </>
   );
 }
 

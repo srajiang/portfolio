@@ -20,6 +20,11 @@ export const Body = styled.div`
 export const Section = styled.section`
   padding-top: 10vh;
   padding-bottom: 15vh;
+  padding-left: 5vw;
+
+  ${mediaQuery.desktop_sm`
+    padding-left: 0;
+  `}
 `;
 
 export const SectionTitle = styled(Title)`

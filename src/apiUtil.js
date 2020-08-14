@@ -7,8 +7,10 @@ const portfolioBase = new Airtable({
 }).base("appJ2zDoqvxeNEdQH");
 
 
+
+
 export async function fetchProjects() {
-  const records = await portfolioBase(PROJECTS_TABLE_NAME).select({}).all()
+  const records = await portfolioBase(PROJECTS_TABLE_NAME).select({}).all();
   return records;
 }
 
@@ -17,4 +19,3 @@ export async function fetchBio() {
   const bio = await portfolioBase(BIO_TABLE_NAME).select({}).all();
   return bio;
 }
-
