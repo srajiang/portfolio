@@ -4,7 +4,7 @@ import { font, mediaQuery } from './theme';
 
 export const Main = styled.main`
   width: 60vw;
-  min-width: ;
+  min-width: 360px;
   margin: 0 auto;
 
   ${mediaQuery.desktop_sm`
@@ -25,6 +25,10 @@ export const Section = styled.section`
   ${mediaQuery.desktop_sm`
     padding-left: 0;
   `}
+`;
+
+export const SectionWide = styled(Section)`
+  padding-left: 0;
 `;
 
 export const SectionTitle = styled(Title)`
