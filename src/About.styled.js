@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import {font, mediaQuery} from './theme';
-import { L } from './Base.styled';
+import { L, T } from './Base.styled';
 
 
 export const Bio = styled.section`
-  padding-top: 5vh;
+  padding-top: 10px;
   display: flex;
   align-items: center;
   flex: 2 1;
@@ -12,7 +12,10 @@ export const Bio = styled.section`
   ${mediaQuery.desktop_lg`
     flex-direction: column;
   `}
-  
+`;
+
+export const TitleLeft = styled(T)`
+  font-size: ${font.size.header_med};
 `;
 
 export const Link = styled(L)`
@@ -44,7 +47,7 @@ export const PhotoContainer = styled.div`
   margin-left: 75px;
   margin-bottom: 35px;
 
-   ${mediaQuery.desktop_lg`
+  ${mediaQuery.desktop_lg`
     margin-left: 0px;
     margin-top: 30px;
   `}
@@ -52,8 +55,8 @@ export const PhotoContainer = styled.div`
 
   /* hover-off transitions */
   & #photo, #overlay, #underline {
-    webkit-transition: all .15s ease-in 2s;
-    transition: all .15s ease-in 2s;
+    webkit-transition: all .15s ease-in .075s;
+    transition: all .15s ease-in .075s;
     transform: translate(-1px, -1px);
   }
 

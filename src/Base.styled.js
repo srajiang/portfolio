@@ -61,10 +61,19 @@ export const Body = styled.div`
   color: ${({ theme }) => theme.text_header_lg_sub};
 `;
 
-// default Title
+// default title
 export const T = styled.h2`
-  font-size: ${font.size.header_sm};
+  font-size: ${font.size.header_med};
   font-family: ${font.family.header}, sans-serif;
   font-weight: ${font.weight.bold};
   color: ${({ theme }) => theme.text_header_sm};
+`;
+
+// default title accent
+export const TAccent = styled.span`
+  text-align: center;
+  font-family: ${font.family.accent};
+  font-size: calc( 1.2 * ${font.size.accent});
+  color: ${({ theme }) => theme.text_accent}; 
+  margin-top: 10px;
 `;

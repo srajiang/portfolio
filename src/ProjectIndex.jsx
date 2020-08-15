@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { fetchProjects } from './apiUtil';
 import Project from './Project';
 import FeatureIndex from './FeatureIndex';
-import { Grid } from './Project.styled';
-import { TitleLeft, SectionAccent } from './Landing.styled';
+import { Grid, TitleCenter } from './Project.styled';
+import { TAccent } from './Base.styled';
 
 const ProjectIndex = () =>  {
 
@@ -20,17 +20,17 @@ const ProjectIndex = () =>  {
   if (!projects) return null;
   return (
     <>
-      <TitleLeft>
-        <SectionAccent>02.1 / </SectionAccent>
+      <TitleCenter>
+        <TAccent>02.1 / </TAccent>
         Featured Projects
-      </TitleLeft>
+      </TitleCenter>
 
       <FeatureIndex />
 
-      <TitleLeft>
-        <SectionAccent>02.2 / </SectionAccent>
+      <TitleCenter>
+        <TAccent>02.2 / </TAccent>
         More Projects
-      </TitleLeft>
+      </TitleCenter>
 
       <Grid>
         {projects.map((record) => (

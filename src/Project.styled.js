@@ -42,14 +42,15 @@ export const Card = styled.div`
 
 `;
 
-export const Title = styled(T)`
+export const TitleCenter = styled(T)`
   text-align: center;
 `;
 
-export const CardTitle = styled(Title)`
+export const CardTitle = styled(T)`
   text-align: left;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-size: ${font.size.header_sm};
 `;
 
 export const Desc = styled.p`

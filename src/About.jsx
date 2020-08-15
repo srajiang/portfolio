@@ -1,9 +1,8 @@
 import React, { useEffect, useState, Fragment} from 'react';
 import { fetchBio } from './apiUtil';
 
-import { Body } from './Base.styled';
-import { TitleLeft, SectionAccent } from "./Landing.styled";
-import { Bio, Photo, PhotoOverlay, PhotoContainer, PhotoUnderLine, Link, List } from './About.styled';
+import { Body, TAccent } from './Base.styled';
+import { Bio, Photo, PhotoOverlay, PhotoContainer, PhotoUnderLine, Link, List, TitleLeft } from './About.styled';
 
 const About = () => {
   
@@ -47,7 +46,7 @@ const About = () => {
   return (
     <>
       <TitleLeft>
-        <SectionAccent>01 / </SectionAccent>
+        <TAccent>01 / </TAccent>
         About Me
       </TitleLeft>
       <Bio>
