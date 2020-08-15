@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-import {font} from './theme';
+import styled from 'styled-components';
+import {font, mediaQuery} from './theme';
 import { L } from './Base.styled';
 
 
@@ -8,6 +8,11 @@ export const Bio = styled.section`
   display: flex;
   align-items: center;
   flex: 2 1;
+
+  ${mediaQuery.desktop_lg`
+    flex-direction: column;
+  `}
+  
 `;
 
 export const Link = styled(L)`
@@ -15,7 +20,6 @@ export const Link = styled(L)`
   display: inline-block;
   font-family: ${font.family.body};
   color: ${({theme}) => theme.text_accent };
-
 
   &::after {
     content: "";
@@ -38,7 +42,12 @@ export const Link = styled(L)`
 
 export const PhotoContainer = styled.div`
   margin-left: 75px;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
+
+   ${mediaQuery.desktop_lg`
+    margin-left: 0px;
+    margin-top: 30px;
+  `}
   position: relative;
 
   /* hover-off transitions */
@@ -50,7 +59,7 @@ export const PhotoContainer = styled.div`
 
   & #underline{
     opacity: 100%;
-    transform: translate(3px, 3px);
+    transform: translate(2px, 2px);
   }
 
   /* hover-on transitions */
@@ -67,7 +76,7 @@ export const PhotoContainer = styled.div`
 
     #underline{
       opacity: 100%;
-      transform: translate(-3px, -3px);
+      transform: translate(-2px, -2px);
     }
   }
 `;
@@ -109,5 +118,20 @@ export const Photo = styled.img`
 `;
 
 export const List = styled.ul`
+  padding-top: 10px;
 
+  font-family: ${font.family.accent};
+  font-size: ${font.size.accent};
+  display: grid;
+  list-style-type: none;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 25px;
+
+  & li::before {
+    content: "▹";
+    height: 10px;
+    width: 10px;
+    padding-right: 10px;
+    color: ${({theme}) => theme.text_accent};
+  }
 `;

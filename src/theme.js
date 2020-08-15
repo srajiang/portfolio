@@ -47,7 +47,7 @@ export const fontWeights = {
 export const fontSizes = {
   header: "4rem",
   header_med: "1.75rem",
-  header_sm: "1.15rem", 
+  header_sm: "1.10rem", 
   body: ".75rem",
   accent: ".8rem",
 }

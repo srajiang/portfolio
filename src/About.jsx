@@ -1,14 +1,9 @@
 import React, { useEffect, useState, Fragment} from 'react';
 import { fetchBio } from './apiUtil';
-import { SectionTitle, SectionAccent } from "./Landing.styled";
-import { Bio, Photo, PhotoOverlay, PhotoContainer, PhotoUnderLine, Link } from './About.styled';
-import { Body } from './Base.styled'
 
-/* 
-  TODO
-  + add photo
-  + add animated underline on hover
- */
+import { Body } from './Base.styled';
+import { SectionTitle, SectionAccent } from "./Landing.styled";
+import { Bio, Photo, PhotoOverlay, PhotoContainer, PhotoUnderLine, Link, List } from './About.styled';
 
 const About = () => {
   
@@ -63,12 +58,17 @@ const About = () => {
             <p>Hi, I'm {bio.name}. I'm a {bio.job_title} based out of {bio.location}.</p>
             <br></br>
             <p>I'm an engineer with a background in design. I got my start 
-              working at places like {formatList(bio.display_name, bio.link)}. 
-            </p>
+              working at places like {formatList(bio.display_name, bio.link)}. {bio.personal_statement} I am 
+              currently {bio.activity} at {
+              <Link target="_blank" >{bio.employer_display_name}</Link>
+            }.</p>
             <br></br>
-            <p>{bio.personal_statement} Currently {bio.activity} at {
-              <Link target= "_blank" >{bio.employer_display_name}</Link>
-              }. 
+            <p>
+              Here are some technologies I've been using lately: {
+                <List>
+                  {bio.stack.map((tech) => <li>{tech}</li>)}
+                </List>
+              }
             </p>
           </Body>
         }
