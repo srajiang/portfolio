@@ -1,6 +1,7 @@
 import React from 'react';
 import { fetchProjects } from './apiUtil';
 import Project from './Project';
+import FeatureIndex from './FeatureIndex';
 import { Grid } from './Project.styled';
 import { SectionTitle, SectionAccent } from './Landing.styled';
 
@@ -24,8 +25,18 @@ class ProjectIndex extends React.Component {
     return (
       <>
         <SectionTitle>
-          <SectionAccent>02 / </SectionAccent>
-          Other Projects
+          <SectionAccent>02.1 / </SectionAccent>
+          Featured Projects
+        </SectionTitle>
+
+        <FeatureIndex>
+
+        </FeatureIndex>
+
+
+        <SectionTitle>
+          <SectionAccent>02.2 / </SectionAccent>
+          More Projects
         </SectionTitle>
 
         <Grid>
