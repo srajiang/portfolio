@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { font, 
          mediaQuery 
       } from './theme';
-
+import { T } from './Base.styled';
 
 export const Grid = styled.div`
 
@@ -42,13 +42,8 @@ export const Card = styled.div`
 
 `;
 
-export const Title = styled.h2`
+export const Title = styled(T)`
   text-align: center;
-
-  font-size: ${font.size.header_sm};
-  font-family: ${font.family.header}, sans-serif;
-  font-weight: ${font.weight.bold};
-  color: ${({theme}) => theme.text_header_sm};
 `;
 
 export const CardTitle = styled(Title)`

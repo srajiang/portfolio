@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Title } from './Project.styled';
+import { T } from './Base.styled';
 import { font, mediaQuery } from './theme';
 
 export const Main = styled.main`
@@ -31,7 +31,7 @@ export const SectionWide = styled(Section)`
   padding-left: 0;
 `;
 
-export const SectionTitle = styled(Title)`
+export const TitleLeft = styled(T)`
   font-size: ${font.size.header_med};
 `;
 

@@ -1,52 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { fetchProjects } from './apiUtil';
 import Project from './Project';
 import FeatureIndex from './FeatureIndex';
 import { Grid } from './Project.styled';
-import { SectionTitle, SectionAccent } from './Landing.styled';
+import { TitleLeft, SectionAccent } from './Landing.styled';
 
-class ProjectIndex extends React.Component {
+const ProjectIndex = () =>  {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      data: null
+  const [projects, setProjects] = useState(null);
+
+  useEffect(() => {
+    async function getProjects() {
+      let projects = await fetchProjects();
+      setProjects(projects);
     }
-  }
+    getProjects();
+  }, []);
 
-  async componentDidMount() {
-    let projects = await fetchProjects();
-    this.setState({ data: projects });
-  }
+  if (!projects) return null;
+  return (
+    <>
+      <TitleLeft>
+        <SectionAccent>02.1 / </SectionAccent>
+        Featured Projects
+      </TitleLeft>
 
-  render() {
-    let [data] = [this.state.data];
-    if (!data) return null;
-    return (
-      <>
-        <SectionTitle>
-          <SectionAccent>02.1 / </SectionAccent>
-          Featured Projects
-        </SectionTitle>
+      <FeatureIndex />
 
-        <FeatureIndex>
+      <TitleLeft>
+        <SectionAccent>02.2 / </SectionAccent>
+        More Projects
+      </TitleLeft>
 
-        </FeatureIndex>
-
-
-        <SectionTitle>
-          <SectionAccent>02.2 / </SectionAccent>
-          More Projects
-        </SectionTitle>
-
-        <Grid>
-          {data.map((record) => (
-            <Project key={record.id} record={record.fields} />
-          ))}
-        </Grid>
-      </>
-    );  
-  }
+      <Grid>
+        {projects.map((record) => (
+          <Project key={record.id} record={record.fields} />
+        ))}
+      </Grid>
+    </>
+  );  
 }
+
 
 export default ProjectIndex;

@@ -2,7 +2,7 @@ import React, { useEffect, useState, Fragment} from 'react';
 import { fetchBio } from './apiUtil';
 
 import { Body } from './Base.styled';
-import { SectionTitle, SectionAccent } from "./Landing.styled";
+import { TitleLeft, SectionAccent } from "./Landing.styled";
 import { Bio, Photo, PhotoOverlay, PhotoContainer, PhotoUnderLine, Link, List } from './About.styled';
 
 const About = () => {
@@ -12,7 +12,6 @@ const About = () => {
   useEffect(() => {
     async function fetchData() {
       let bio = await fetchBio();
-      console.log(bio[0].fields);
       setBio(bio[0].fields);
     }
     fetchData();
@@ -47,10 +46,10 @@ const About = () => {
 
   return (
     <>
-      <SectionTitle>
+      <TitleLeft>
         <SectionAccent>01 / </SectionAccent>
         About Me
-      </SectionTitle>
+      </TitleLeft>
       <Bio>
         {
           bio !== null &&  

@@ -31,7 +31,7 @@ export const Link = styled(L)`
     background-color: ${({theme}) => theme.text_accent};
     visibiity: hidden;
     transform: scaleX(0);
-    transition: all .25s ease-in-out 0s;
+    transition: all .25s ease-out .1s;
   }
 
   &:hover::after {
@@ -52,8 +52,8 @@ export const PhotoContainer = styled.div`
 
   /* hover-off transitions */
   & #photo, #overlay, #underline {
-    webkit-transition: all .15s ease-in;
-    transition: all .15s ease-in;
+    webkit-transition: all .15s ease-in 2s;
+    transition: all .15s ease-in 2s;
     transform: translate(-1px, -1px);
   }
 
@@ -65,8 +65,8 @@ export const PhotoContainer = styled.div`
   /* hover-on transitions */
   &:hover {
     #photo, #overlay, #underline {
-      transition: all .15s ease-out;
-      webkit-transition: all .15s ease-out;
+      transition: all .15s ease-out .075s;
+      webkit-transition: all .15s ease-out .075s;
       transform: translate(1px, 1px);
     }
 

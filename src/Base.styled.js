@@ -39,6 +39,8 @@ export const B = styled.a`
   padding-top: 10px;
   padding-bottom: 10px;
 
+  transition: ${transition.cubic};
+
   &:hover {
     transition: ${transition.cubic};
     cursor: pointer;
@@ -57,4 +59,12 @@ export const Body = styled.div`
   font-weight: ${font.weight.light};
   font-family: ${font.family.body};
   color: ${({ theme }) => theme.text_header_lg_sub};
+`;
+
+// default Title
+export const T = styled.h2`
+  font-size: ${font.size.header_sm};
+  font-family: ${font.family.header}, sans-serif;
+  font-weight: ${font.weight.bold};
+  color: ${({ theme }) => theme.text_header_sm};
 `;
