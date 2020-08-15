@@ -67,6 +67,8 @@ export const T = styled.h2`
   font-family: ${font.family.header}, sans-serif;
   font-weight: ${font.weight.bold};
   color: ${({ theme }) => theme.text_header_sm};
+
+  position: relative;
 `;
 
 // default title accent

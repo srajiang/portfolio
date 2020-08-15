@@ -16,6 +16,16 @@ export const Bio = styled.section`
 
 export const TitleLeft = styled(T)`
   font-size: ${font.size.header_med};
+  
+  &::after {
+      content: "";
+      position: absolute;
+      top: calc(.5 * ${font.size.header_med});
+      left: 200px;
+      height: .05rem;
+      width: 30%;
+      background-color: #c1bfc64d;
+    }
 `;
 
 export const Link = styled(L)`
