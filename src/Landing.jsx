@@ -30,6 +30,7 @@ export const externalLinks = {
   email: { url: "srajiang@gmail.com", fontTag: ["far", "envelope"]}
 };
 
+/* TODO: Adjust light color theme */
 
 const Landing = () => {
 
@@ -47,6 +48,7 @@ const Landing = () => {
           <S><About /></S>
           {/* + featured project section */}
           <SWide><ProjectIndex /></SWide>
+          { /* contact me section */ }
         </Main>
         <Footer />
       </Body>
