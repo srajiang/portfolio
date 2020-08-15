@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { mediaQuery } from './theme';
 
 export const Main = styled.main`
-  width: 60vw;
+  width: 70vw;
   min-width: 360px;
   margin: 0 auto;
 
@@ -19,7 +19,7 @@ export const Body = styled.div`
 export const Section = styled.section`
   padding-top: 10vh;
   padding-bottom: 15vh;
-  padding-left: 5vw;
+  padding-left: 10vw;
 
   ${mediaQuery.desktop_sm`
     padding-left: 0;
