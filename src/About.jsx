@@ -61,13 +61,13 @@ const About = () => {
               <Link target="_blank" >{bio.employer_display_name}</Link>
             }.</p>
             <br></br>
-            <p>
+            <div>
               Here are some technologies I've been using lately: {
                 <List>
-                  {bio.stack.map((tech) => <li>{tech}</li>)}
+                  {bio.stack.map((tech, id) => <li key={id}>{tech}</li>)}
                 </List>
               }
-            </p>
+            </div>
           </Body>
         }
         {

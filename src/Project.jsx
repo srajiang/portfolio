@@ -10,7 +10,6 @@ const Project = fields => {
     desc_short,
     url_repo,
     url_live,
-    // url_image,
     stack,
    } = fields.record;
   

@@ -1,8 +1,17 @@
 import React from 'react';
+import Feature from './Feature';
 
-const FeatureIndex = () => {
+const FeatureIndex = ({projects}) => {
+
     return (
-      <>I'm a feature index</>
+      <>
+      {
+        projects.map((project) => ( 
+          project.fields.visibility === "Featured"
+          && <Feature key={project.id} project={project.fields}/>
+        ))
+      }
+      </>
     )
 }
 

@@ -17,6 +17,10 @@ const ProjectIndex = () =>  {
     getProjects();
   }, []);
 
+  useEffect(() => {
+    console.log(projects);
+  }, [projects])
+
   if (!projects) return null;
   return (
     <>
@@ -25,7 +29,7 @@ const ProjectIndex = () =>  {
         Featured Projects
       </TitleCenter>
 
-      <FeatureIndex />
+      <FeatureIndex projects={projects} />
 
       <TitleCenter>
         <TAccent>02.2 / </TAccent>

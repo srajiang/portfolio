@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { font, mediaQuery } from './theme';
+import { mediaQuery } from './theme';
 
 export const Main = styled.main`
   width: 60vw;
@@ -29,11 +29,3 @@ export const Section = styled.section`
 export const SectionWide = styled(Section)`
   padding-left: 0;
 `;
-
-// export const SectionAccent = styled.span`
-//   text-align: center;
-//   font-family: ${font.family.accent};
-//   font-size: calc( 1.2 * ${font.size.accent});
-//   color: ${({theme}) => theme.text_accent}; 
-//   margin-top: 10px;
-// `;
