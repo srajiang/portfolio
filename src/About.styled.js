@@ -54,6 +54,8 @@ export const Link = styled(L)`
 `;
 
 export const PhotoContainer = styled.div`
+  position: relative;
+  
   margin-left: 75px;
   margin-bottom: 35px;
 
@@ -61,7 +63,6 @@ export const PhotoContainer = styled.div`
     margin-left: 0px;
     margin-top: 30px;
   `}
-  position: relative;
 
   /* hover-off transitions */
   & #photo, #overlay, #underline {
@@ -104,8 +105,6 @@ export const PhotoOverlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-
-  
 `;
 
 export const PhotoUnderLine = styled(PhotoOverlay)`

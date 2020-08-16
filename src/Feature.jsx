@@ -4,6 +4,9 @@ import { FontAwesomeIcon as FA } from "@fortawesome/react-fontawesome";
 import { 
   Container, 
   Image, 
+  ImageContainer,
+  ImageOverlay,
+  ImageUnderline,
   FeatureCard, 
   FeatureLink, 
   Description,
@@ -13,7 +16,6 @@ import {
 import { L } from './Base.styled';
 
 const Feature = ({project}) => {
-  console.log(project);
 
   const {
     title,
@@ -51,7 +53,15 @@ const Feature = ({project}) => {
             )}
           </FeatureLink>
         </Description>
-        <Image src={url_image[0].url} />
+      <div id="image-wrap">
+        <ImageContainer >
+          
+              <Image id="photo" src={url_image[0].url} />
+              <ImageOverlay id="overlay"/>
+              <ImageUnderline id="underline"/>
+            
+        </ImageContainer >
+      </div>
       </Container>
   )
 }
