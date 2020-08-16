@@ -1,20 +1,58 @@
 import React from 'react';
+import { FontAwesomeIcon as FA } from "@fortawesome/react-fontawesome";
 
-import { FeatureIndex, Image, Panel, Description } from './Feature.styled';
+import { 
+  Container, 
+  Image, 
+  FeatureCard, 
+  FeatureLink, 
+  Description,
+  DescriptionMeta, 
+  Title, 
+  Accent } from './Feature.styled';
+import { L } from './Base.styled';
 
 const Feature = ({project}) => {
   console.log(project);
+
+  const {
+    title,
+    desc_long,
+    url_repo,
+    url_live,
+    url_image,
+    stack
+  } = project;
+
   return (
-    <>
-      <FeatureIndex>
+      <Container>
         <Description>
-          <h3>Featured Project</h3>
-          <h2>{project.title}</h2>
-          <Panel>Placeholder text here</Panel>
+          <Accent>Featured Project</Accent>
+          <Title>{title}</Title>
+          <FeatureCard>{desc_long}</FeatureCard>
+          <DescriptionMeta>
+            {stack &&
+              stack.map((ele, idx) => (
+                <span className="tag" key={idx}>
+                  {ele}
+                </span>
+              ))}
+          </DescriptionMeta>
+          <FeatureLink>
+            {url_repo && (
+              <L className="i" href={url_repo}>
+                <FA icon={["fab", "github"]} />
+              </L>
+            )}
+            {url_live && (
+              <L className="i" href={url_live}>
+                <FA icon={["fas", "external-link-alt"]} />
+              </L>
+            )}
+          </FeatureLink>
         </Description>
-        <Image src={project.url_image[0].url} />
-      </FeatureIndex>
-    </>
+        <Image src={url_image[0].url} />
+      </Container>
   )
 }
 

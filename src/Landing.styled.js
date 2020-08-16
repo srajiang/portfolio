@@ -27,5 +27,5 @@ export const Section = styled.section`
 `;
 
 export const SectionWide = styled(Section)`
-  padding-left: 0;
+  padding-left: 5vw;
 `;

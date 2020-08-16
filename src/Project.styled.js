@@ -33,13 +33,14 @@ export const Card = styled.div`
 
   position: relative;
   box-shadow: ${({theme}) => theme.box_shadow} 0px 10px 30px -15px;
+`;
 
+export const AnimatedCard = styled(Card)`
   transition: all 250ms ease-out;
 
   &:hover {
     transform: translateY(-1.5%);
   }
-
 `;
 
 export const TitleCenter = styled(T)`

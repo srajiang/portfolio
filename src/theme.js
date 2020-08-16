@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 
 export const colors_dark = {
   background_primary: "#002732",
-  background_secondary: "#18494be3",
+  background_secondary: "#044349",
   background_shadow: "#021B1A",
   box_shadow: "rgba(2,27,26,1)",
   
@@ -48,7 +48,7 @@ export const fontSizes = {
   header: "4rem",
   header_med: "1.75rem",
   header_sm: "1.10rem", 
-  body: ".75rem",
+  body: "1rem",
   accent: ".8rem",
 }
 

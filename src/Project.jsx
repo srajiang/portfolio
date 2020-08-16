@@ -1,7 +1,8 @@
 import React from 'react';
-import { Card, CardTitle, Desc, DescMeta, Link } from "./Project.styled";
-import { L } from './Base.styled';
+import { AnimatedCard, CardTitle, Desc, DescMeta, Link } from "./Project.styled";
 import { FontAwesomeIcon as FA } from "@fortawesome/react-fontawesome";
+import { L } from './Base.styled';
+
 
 const Project = fields => {
 
@@ -15,7 +16,7 @@ const Project = fields => {
   
    return (
      <>
-       <Card>
+       <AnimatedCard>
          <Link>
            {url_repo && (
              <L className="i" href={url_repo}>
@@ -38,7 +39,7 @@ const Project = fields => {
                </span>
              ))}
          </DescMeta>
-       </Card>
+       </AnimatedCard>
      </>
    );
 }
