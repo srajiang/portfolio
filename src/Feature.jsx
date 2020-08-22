@@ -42,12 +42,12 @@ const Feature = ({project}) => {
           </DescriptionMeta>
           <FeatureLink>
             {url_repo && (
-              <L className="i" href={url_repo}>
+              <L className="i" target="_blank" href={url_repo}>
                 <FA icon={["fab", "github"]} />
               </L>
             )}
             {url_live && (
-              <L className="i" href={url_live}>
+              <L className="i" target="_blank" href={url_live}>
                 <FA icon={["fas", "external-link-alt"]} />
               </L>
             )}
