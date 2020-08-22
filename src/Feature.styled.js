@@ -67,8 +67,8 @@ export const DescriptionMeta = styled(DescMeta)`
 `;
 
 export const ImageContainer = styled.div`
-  height: 320px;
-  // width: 100%;
+  width: 600px;
+  height: 365px;
 
   position: relative;
   z-index: -2;
@@ -80,8 +80,8 @@ export const ImageContainer = styled.div`
 
 export const ImageOverlay = styled.div`
 
+  width: inherit;
   height: inherit;
-  width: 100%;
 
   position: absolute;
   top: 0;
@@ -94,9 +94,10 @@ export const ImageOverlay = styled.div`
 `;
 
 export const ImageUnderline = styled(ImageOverlay)`
-  height: inherit;
-  width: 100%;
 
+
+  width: inherit;
+  height: inherit;
   background: transparent;
   color: ${({ theme }) => theme.text_accent};
   border: 1px solid ${({ theme }) => theme.text_accent};
@@ -128,8 +129,11 @@ export const ImageUnderline = styled(ImageOverlay)`
 export const Image = styled.img`
   z-index: -2;
   border-radius: 4px;
+  
+  width: inherit;
   height: inherit;
-
+  
+  object-fit: cover; 
 `;
 
 export const FeatureCard = styled(Card)`
