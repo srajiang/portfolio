@@ -53,7 +53,6 @@ const Feature = ({project}) => {
             )}
           </FeatureLink>
         </Description>
-      <div id="image-wrap">
         <ImageContainer >
           
               <Image id="photo" src={url_image[0].url} />
@@ -61,7 +60,6 @@ const Feature = ({project}) => {
               <ImageUnderline id="underline"/>
             
         </ImageContainer >
-      </div>
       </Container>
   )
 }

@@ -9,9 +9,9 @@ export const colors_dark = {
   
   text_accent: "#FF737B", // contrast
 
-  text_header_lg: "#cdcfcf",
-  text_header_lg_sub: "#828788",
-  text_header_sm: "#cdcfcf",
+  text_header_lg: "#dde1e1",
+  text_header_lg_sub: "#839396",
+  text_header_sm: "#dde1e1",
   
   text: "#C1BFC6", // body text
   isDark: true,
@@ -19,18 +19,18 @@ export const colors_dark = {
 };
 
 export const colors_light = {
-  background_primary: "#dbdfdf",
-  background_secondary: "#e7e7e7",
+  background_primary: "#faf9f9",
+  background_secondary: "#ffffff",
   background_shadow: "",
   box_shadow: "rgba(13, 22, 20,0.31)",
 
   text_accent: "#FE4F4F",
 
   text_header_lg: "#285260",
-  text_header_lg_sub: "#839195",
+  text_header_lg_sub: "#596062",
   text_header_sm:  "#285260",
 
-  text: "#535353",
+  text: "#596062",
   isDark: false,
 }
 

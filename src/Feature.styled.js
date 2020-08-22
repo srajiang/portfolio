@@ -12,13 +12,38 @@ export const Container = styled.div`
   margin-top: 50px;
   position: relative;
   max-width: 1100px;
+  
+  /* hover-off transitions */
+    & #photo, #overlay, #underline {
+      webkit-transition: all .15s ease-in .075s;
+      transition: all .15s ease-in .075s;
+      transform: translate(-1px, -1px);
+    }
+  
+    & #underline{
+      opacity: 100%;
+      transform: translate(2px, 2px);
+    }
 
-  & > #image-wrap {
-    z-index: -1;
-    position: absolute;
-    right: 0px;
-    top: 0px;
+ /* hover-on transitions */
+  &:hover {
+    #photo, #overlay, #underline {
+      transition: all .15s ease-out .075s;
+      webkit-transition: all .15s ease-out .075s;
+      transform: translate(1px, 1px);
+    }
+
+    #overlay {
+      opacity: 0%;
+    }
+
+    #underline{
+      opacity: 100%;
+      transform: translate(-2px, -2px);
+    }
   }
+
+
 `;
 
 export const Accent = styled.h3`
@@ -42,53 +67,35 @@ export const DescriptionMeta = styled(DescMeta)`
 `;
 
 export const ImageContainer = styled.div`
+  height: 320px;
+  // width: 100%;
+
   position: relative;
-
-  /* hover-off transitions */
-  & > #photo, #overlay, #underline {
-    webkit-transition: all .15s ease-in .075s;
-    transition: all .15s ease-in .075s;
-    transform: translate(-1px, -1px);
-  }
-
-  & #underline{
-    opacity: 100%;
-    transform: translate(2px, 2px);
-  }
-
-  /* hover-on transitions */
-  &:hover {
-    #photo, #overlay, #underline {
-      transition: all .15s ease-out .075s;
-      webkit-transition: all .15s ease-out .075s;
-      transform: translate(1px, 1px);
-    }
-
-    #overlay {
-      opacity: 0%;
-    }
-
-    #underline{
-      opacity: 100%;
-      transform: translate(-2px, -2px);
-    }
-  }
-
+  z-index: -2;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  
 `;
 
 export const ImageOverlay = styled.div`
 
+  height: inherit;
+  width: 100%;
+
   position: absolute;
   top: 0;
   left: 0;
-
   border-radius: 4px;
   background: ${({ theme }) => theme.text_accent};
-  opacity: 25%;
+  z-index: 0;
+  opacity: 35%;
 
 `;
 
 export const ImageUnderline = styled(ImageOverlay)`
+  height: inherit;
+  width: 100%;
 
   background: transparent;
   color: ${({ theme }) => theme.text_accent};
@@ -119,10 +126,10 @@ export const ImageUnderline = styled(ImageOverlay)`
 `;
 
 export const Image = styled.img`
-
+  z-index: -2;
   border-radius: 4px;
-  height: 300px;
-  width: 600px;
+  height: inherit;
+
 `;
 
 export const FeatureCard = styled(Card)`
